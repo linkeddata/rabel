@@ -6,8 +6,7 @@
     "name": "Tim Berners-Lee",
     "email": "timbl@w3.org"
   },
-  "maintainers": [
-  ],
+  "maintainers": [],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,9 +15,9 @@
   "homepage": "http://github.com/timbl/rabel",
   "bugs": "http://github.com/timbl/rabel/issues",
   "dependencies": {
-    "rdflib": "^0.2.9"
+    "rdflib": "^0.2.9",
+    "xmldom": "^0.1.22"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "main": "rabel.js"
 }

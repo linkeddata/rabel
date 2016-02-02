@@ -5,6 +5,23 @@
 //
 //
 
+var helpMessage =
+"Utilty data converter for linked data\n\
+\n\
+Commands in unix option form are executed left to right, and include:\n\
+\n\
+-base=rrrr    Set the current base URI (relative URI)\n\
+-clear        Clear the current store\n\
+-dump         Serialize the current store in current content type\n\
+-format=cccc  Set the current content-type\n\
+-help         This message \n\
+-in=uri       Load a web resource or file\n\
+-out=filename Output in eth current content type\n\
+-size         Give the current store\n\
+-version      Give the version of this program\n\
+\n"
+
+
 $rdf = require('rdflib');
 var fs = require('fs');
 
@@ -58,12 +75,26 @@ var doNext = function(remaining) {
                 contentType = right;
                 break;
                 
+            case '-help':
+                condole.log(helpMessage);
+                break;
+                
             case '-in':
                 targetDocument = $rdf.sym($rdf.uri.join(right, base))
                 //console.log("Document is " + targetDocument)
                 fetcher.nowOrWhenFetched(targetDocument,  {}, function(ok, body, xhr) {
                     check(ok, body, xhr? xhr.status : undefined);
                     console.log("Loaded  " + targetDocument);
+                    doNext(remaining);
+                }); // target, kb, base, contentType, callback
+                return; // STOP processing at this level
+
+            case '-inXML':
+                targetDocument = $rdf.sym($rdf.uri.join(right, base))
+                //console.log("Document is " + targetDocument)
+                readXML(targetDocument.uri,  {}, function(ok, body, xhr) {
+                    check(ok, body, xhr? xhr.status : undefined);
+                    console.log("Loaded XML " + targetDocument);
                     doNext(remaining);
                 }); // target, kb, base, contentType, callback
                 return; // STOP processing at this level
@@ -98,10 +129,34 @@ var doNext = function(remaining) {
         
             default:
                 console.log("Unknown command: " + left);
+                condole.log(helpMessage);
                 process.exit(1);
         }
     }
     process.exit(0);
+}
+
+readXML = function(uri, options, callback) {
+    var file =  $rdf.Util.uri.refTo(base, uri);
+    fs.readFile(file, undefined, function(err,data){
+        if (err) return callback(false, err);
+        var ns = options.ns || $rdf.uri.join(file, base)
+        var DOMParser = require('xmldom').DOMParser;
+        var doc = new DOMParser().parseFromString(data);
+        var root = kb.bnode();
+        kb.add(kb.sum(uri), kb.sym('http://www.w3.org/2007/ont/link#xmlRoot'), root);
+        var convert = function(ele, node) {
+            if (ele.children) for(var i=0; i<ele.children.length; i++) {
+                var child = ele.children[i];
+                var node2 = kb.bnode();
+                kb.add(node, kb.sym(uri+child.tagName), node2)
+                
+            }
+        }
+        convert(doc, root);
+        callback(true);
+    });
+
 }
 
 doNext(process.argv.slice(2));
