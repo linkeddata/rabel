@@ -10,10 +10,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/timbl/rabel"
+    "url": "https://github.com/linkeddata/rabel"
   },
-  "homepage": "http://github.com/timbl/rabel",
-  "bugs": "http://github.com/timbl/rabel/issues",
+  "homepage": "http://github.com/linkeddata/rabel",
+  "bugs": "http://github.com/linkeddata/rabel/issues",
   "dependencies": {
     "rdflib": "^0.2.9",
     "xmldom": "^0.1.22"

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type="text/xsl" href="link-relations.xsl"?>
+<?oxygen RNGSchema="link-relations.rng" type="xml"?>
+<registry xmlns="http://www.iana.org/assignments" id="link-relations">
+  <title>Link Relations</title>
+  <created>2005-08-26</created>
+  <updated>2016-01-22</updated>
+
+</registry>
