@@ -1,4 +1,4 @@
-
+#!/usr/local/bin/node
 // Utility Data conversion program.
 //
 // Test platform for parsers and serializers
@@ -76,7 +76,7 @@ var doNext = function(remaining) {
                 break;
                 
             case '-help':
-                condole.log(helpMessage);
+                console.log(helpMessage);
                 break;
                 
             case '-in':
@@ -129,7 +129,7 @@ var doNext = function(remaining) {
         
             default:
                 console.log("Unknown command: " + left);
-                condole.log(helpMessage);
+                console.log(helpMessage);
                 process.exit(1);
         }
     }

@@ -18,6 +18,10 @@
     "rdflib": "^0.2.9",
     "xmldom": "^0.1.22"
   },
+  "bin": {
+    "rabel": "rabel.js"
+  },
+
   "devDependencies": {},
   "main": "rabel.js"
 }
