@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>XML Data Block Demo</title>
+<link rel="derivedfrom" href="https://developer.mozilla.org/en/docs/Using_XML_Data_Islands_in_Mozilla"/>
+<script id="purchase-order" type="application/xml">
+<purchaseOrder xmlns="http://example.mozilla.org/PurchaseOrderML">
+  <lineItem>
+    <name>Line Item 1</name>
+    <price>1.25</price>
+  </lineItem>
+  <lineItem>
+    <name>Line Item 2</name>
+    <price>2.48</price>
+  </lineItem>
+</purchaseOrder>
+</script>
+<script>
+function runDemo() {
+  var orderSource = document.getElementById("purchase-order").textContent;
+  var parser = new DOMParser();
+  var doc = parser.parseFromString(orderSource, "application/xml");
+  var lineItems = doc.getElementsByTagNameNS("http://example.mozilla.org/PurchaseOrderML", "lineItem");
+  var firstPrice = lineItems[0].getElementsByTagNameNS("http://example.mozilla.org/PurchaseOrderML", "price")[0].textContent;
+  document.body.textContent = "The purchase order contains " + lineItems.length + " line items. The price of the first line item is " + firstPrice + ".";
+}
+</script>
+</head>
+<body onload="runDemo()";>
+Demo did not run
+</body>
+</html>

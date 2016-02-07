@@ -19,6 +19,8 @@ Commands in unix option form are executed left to right, and include:\n\
 -out=filename Output in eth current content type\n\
 -size         Give the current store\n\
 -version      Give the version of this program\n\
+\n\
+Formats are given as MIME types, such as text/turtle (default), application/rdf+xml, etc\n\
 \n"
 
 
@@ -46,12 +48,36 @@ var exitMessage = function(message) {
 }
 
 var doNext = function(remaining) {
+
+    var loadResource = function(right) {
+        targetDocument = $rdf.sym($rdf.uri.join(right, base))
+        //console.log("Document is " + targetDocument)
+        if (contentType == 'application/xml') {
+            readXML(targetDocument,  {}, function(ok, body, xhr) {
+                check(ok, body, xhr? xhr.status : undefined);
+                console.log("Loaded XML " + targetDocument);
+                doNext(remaining);
+            }); // target, kb, base, contentType, callback
+        } else {
+            fetcher.nowOrWhenFetched(targetDocument,  {}, function(ok, body, xhr) {
+                check(ok, body, xhr? xhr.status : undefined);
+                console.log("Loaded  " + targetDocument);
+                doNext(remaining);
+            }); // target, kb, base, contentType, callback
+        }
+    }
+
+
     while (remaining.length) {
         // console.log("... remaining " + remaining.join(' '));
 
         var command = remaining.shift().split('=');
         var left = command[0],
             right = command[1];
+        if (left.slice(0,1) !== '-') {
+            loadResource(left);
+            return;
+        }
         switch(left) {
             case '-base':
                 base = $rdf.uri.join(right, base)
@@ -80,24 +106,8 @@ var doNext = function(remaining) {
                 break;
                 
             case '-in':
-                targetDocument = $rdf.sym($rdf.uri.join(right, base))
-                //console.log("Document is " + targetDocument)
-                fetcher.nowOrWhenFetched(targetDocument,  {}, function(ok, body, xhr) {
-                    check(ok, body, xhr? xhr.status : undefined);
-                    console.log("Loaded  " + targetDocument);
-                    doNext(remaining);
-                }); // target, kb, base, contentType, callback
-                return; // STOP processing at this level
-
-            case '-inXML':
-                targetDocument = $rdf.sym($rdf.uri.join(right, base))
-                //console.log("Document is " + targetDocument)
-                readXML(targetDocument,  {}, function(ok, body, xhr) {
-                    check(ok, body, xhr? xhr.status : undefined);
-                    console.log("Loaded XML " + targetDocument);
-                    doNext(remaining);
-                }); // target, kb, base, contentType, callback
-                return; // STOP processing at this level
+                loadResource(right);
+                return;
 
             case '-out':
                 doc = $rdf.sym($rdf.uri.join(right, base));
@@ -114,7 +124,7 @@ var doNext = function(remaining) {
                     if (err) {
                         exitMessage("Error writing file <"+right+"> :" + err);
                     }
-                    console.log("Written " + fileName);
+                    console.log("Written " + doc);
                     doNext(remaining);
                 });
                 return;
@@ -184,7 +194,22 @@ readXML = function(targetDocument, options, callback) {
             return text;
         }
 
-
+        /////////////////////////// GPX SPECIAL
+        
+        
+        var GPX_predicateMap = {
+            time: { uri: 'http://www.w3.org/2003/01/geo/wgs84_pos#time',
+            type: 'http://www.w3.org/2001/XMLSchema#dateTime'},
+            
+            lat: { uri: 'http://www.w3.org/2003/01/geo/wgs84_pos#lat'},
+            lon: { uri: 'http://www.w3.org/2003/01/geo/wgs84_pos#long'},
+            ele: { uri: 'http://www.w3.org/2003/01/geo/wgs84_pos#altitude'}
+        };
+        
+        
+        
+        /////////////////////////// IANA SPECIAL
+        
         var IANA_predicateMap = {
             created: { uri: 'http://purl.org/dc/terms/created',
                     type: 'http://www.w3.org/2001/XMLSchema#date'}, // @@CHECK
@@ -222,12 +247,14 @@ readXML = function(targetDocument, options, callback) {
             }
             return null;
         }
+        
+        //////////////////////////////////
 
         var convert = function(ele, node, indent) {
             indent = indent || '';
             var pred, obj, type;
-            console.log(indent + "nodeName: " + ele.nodeName + " type " + ele.nodeType)
-            console.log(indent + "tagName: " + ele.tagName);
+            //console.log(indent + "nodeName: " + ele.nodeName + " type " + ele.nodeType)
+            //console.log(indent + "tagName: " + ele.tagName);
             if (ele.nodeType in ignore) { // PI
                 return;
             }
@@ -236,7 +263,7 @@ readXML = function(targetDocument, options, callback) {
                 pred = kb.sym(ns + id);
                 if (options.predicateMap && options.predicateMap[id]) {
                     var p = options.predicateMap[id];
-                    console.log(indent + "Mapping to " + p.uri)
+                    // console.log(indent + "Mapping to " + p.uri)
                     if (p.uri) {
                         pred = kb.sym(p.uri);
                     }
@@ -248,10 +275,10 @@ readXML = function(targetDocument, options, callback) {
                 
             if (ele.attributes) {
                 var attrs = ele.attributes, a;
-                console.log(indent + 'attributes: ' + attrs.length)
+                // console.log(indent + 'attributes: ' + attrs.length)
                 for (var j=0; j < attrs.length; j++) {
                     a = attrs.item(j);
-                    console.log(indent + j + ") " +a.nodeName + " = " + a.nodeValue);
+                    // console.log(indent + j + ") " +a.nodeName + " = " + a.nodeValue);
                     if (a.nodeName === 'xmlns') {
                         defaultNamespace = a.nodeValue;
                 
@@ -263,6 +290,8 @@ readXML = function(targetDocument, options, callback) {
                 
                         } else if (defaultNamespace === 'http://www.topografix.com/GPX/1/1') {
                             ns ='http://hackdiary.com/ns/gps#'; // @@@ u
+                            options.predicateMap = GPX_predicateMap;
+                            console.log('GPX Mode');
                         }
                         continue;
                     }
@@ -271,39 +300,39 @@ readXML = function(targetDocument, options, callback) {
                 }
             }
             if (ele.childNodes) {
-                console.log(indent + "children " +ele.childNodes.length)
+                // console.log(indent + "children " +ele.childNodes.length)
                 for(var i=0; i<ele.childNodes.length; i++) {
-                    console.log(indent + '  i ' + i)
+                    // console.log(indent + '  i ' + i)
                     var child = ele.childNodes[i];
                     type = null;
                     setPred(child.nodeName);
                     if (child.nodeType === 3) { // text
                         //throw "We should not see text nodes at this level"
-                        console.log(indent + "  nodeName: " + child.nodeName + " type " + child.nodeType)
+                        // console.log(indent + "  nodeName: " + child.nodeName + " type " + child.nodeType)
                         obj = child.nodeValue.trim(); // @@ optional
                         if (obj.length !== 0) {
                             console.log($rdf.lit(obj, undefined, type))
                             kb.add(node, kb.sym(ns + ele.nodeName), $rdf.lit(obj, undefined, type), targetDocument)
-                            console.log(indent + 'actual text ' + obj)
+                            // console.log(indent + 'actual text ' + obj)
                         } else {
-                            console.log(indent + 'whitespace')
+                            // console.log(indent + 'whitespace')
                         }
                     } else if (!(child.nodeType in ignore)){
                         var txt = justTextContent(child);
                         if (txt !== false) {
                             if (txt.length > 0) {
                                 kb.add(node, pred, $rdf.lit(txt, undefined, type), targetDocument)
-                                console.log($rdf.lit(txt, undefined, type))
+                                // console.log($rdf.lit(txt, undefined, type))
                             }
                         } else if (options.iana && magicIANAxref(child)) {
                             kb.add(node, kb.sym(ns + child.nodeName), magicIANAxref(child), targetDocument);
-                            console.log(indent + "Magic IANA xref " + magicIANAxref(child))
+                            // console.log(indent + "Magic IANA xref " + magicIANAxref(child))
                         } else {
                             if (child.attributes && child.attributes.getNamedItem('id')){
                                 obj = kb.sym(local + child.attributes.getNamedItem('id').nodeValue);
                             } else if (options.iana && magicIANAvalue(child)) {
                                 obj = magicIANAvalue(child);
-                                console.log(indent + "Magic IANA value " + obj)
+                                // console.log(indent + "Magic IANA value " + obj)
                                 kb.add(obj, RDF('type'), RDF('Property') , targetDocument);
                             } else {
                                 obj = kb.bnode();
