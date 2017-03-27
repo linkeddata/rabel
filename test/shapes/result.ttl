@@ -12,6 +12,7 @@
                 sh:focusNode per:Alice;
                 sh:resultMessage
                     "Error 987-65-432A should match pattern  ^\\d{3}-\\d{2}-\\d{4}$";
+                sh:resultPath per:ssn;
                 sh:resultSeverity sh:Violation;
                 sh:sourceConstraintComponent sh:PatternConstraintComponent;
                 sh:sourceShape per:PersonShape;
@@ -22,6 +23,7 @@
                 sh:focusNode per:Bob;
                 sh:resultMessage
                     "Too many (2) <http://datashapes.org/sh/tests/core/complex/personexample.test#ssn> on <http://datashapes.org/sh/tests/core/complex/personexample.test#Bob>";
+                sh:resultPath per:ssn;
                 sh:resultSeverity sh:Violation;
                 sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
                 sh:sourceShape per:PersonShape
@@ -41,6 +43,7 @@
                 sh:focusNode per:Calvin;
                 sh:resultMessage
                     "Error <http://datashapes.org/sh/tests/core/complex/personexample.test#UntypedCompany> should be in class <http://datashapes.org/sh/tests/core/complex/personexample.test#Company>";
+                sh:resultPath per:worksFor;
                 sh:resultSeverity sh:Violation;
                 sh:sourceConstraintComponent sh:ClassConstraintComponent;
                 sh:sourceShape per:PersonShape
