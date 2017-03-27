@@ -36,11 +36,19 @@ var ShapeChecker = require('./../shacl-check/src/shacl-check.js')
 var kb = $rdf.graph()
 var fetcher = $rdf.fetcher(kb)
 
-var RDF = $rdf.Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
-var a = RDF('type')
+const RDF = $rdf.Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
+const a = RDF('type')
+const mf = $rdf.Namespace('http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#')
+const sht = $rdf.Namespace('http://www.w3.org/ns/shacl/test-suite#')
+
 
 var contentType = 'text/turtle'
 var reportDocument, targetDocument
+
+var testHandlers = []
+var registerTest = function(klass, handler){
+  testHandlers[klass.uri || klass] = handler
+}
 
 var check = function (ok, message, status) {
   if (!ok) {
@@ -189,14 +197,12 @@ var doNext = function (remaining) {
       case '-test':
         doc = $rdf.sym($rdf.uri.join(right, base))
         console.log("Loading " + doc)
-        fetcher.load(doc).then(function (xhr) {
+        fetcher.nowOrWhenFetched(doc, {}, function(ok, message){
+          if (!ok) exitMessage("Error loading tests " + doc + ": " + message)
           runTests(doc)
           doNext(remaining)
-        }).catch(function (e) {
-          console.log(e)
-          process.exit(1)
         })
-        break
+        return
 
       case '-version':
         console.log('rdflib built: ' + $rdf.buildTime)
@@ -208,10 +214,15 @@ var doNext = function (remaining) {
         process.exit(1)
     }
   }
-  process.exit(0)
+/*
+  (function wait () {
+     if (true) setTimeout(wait, 3000);
+  })();
+*/
+  // process.exit(0)    No!!! node must wait for stuff to finish
 }
 
-var statementsToTurtle = function (statements, base) {
+var statementsToTurtle = function (kb, statements, base) {
   var sz = new $rdf.Serializer(kb)
   sz.suggestNamespaces(kb.namespaces)
   sz.setBase(base)
@@ -219,57 +230,98 @@ var statementsToTurtle = function (statements, base) {
   return sz.statementsToN3(statements)
 }
 
-var runTests = function (testDocument) {
-  const sht = $rdf.Namespace('http://www.w3.org/ns/shacl/test-suite#')
-
+var validationTest = function(test, indent){
   var forwardTree = function (x) {
     var sts = []
     var f = function (x) {
       var s = kb.statementsMatching(x)
       sts = sts.concat(s)
       s.forEach(function (st) {
-        f(st.object)
+        if (st.object.termType === 'BlankNode') {
+          f(st.object)
+        }
       })
     }
+    f(x)
+    return sts
   }
+  console.log(indent + 'Validation test ' + test)
+  action = kb.the(test, mf('action'))
+  if (!action) throw new Error("Need action")
+  dataGraph = kb.the(action, sht('dataGraph'))
+  shapesGraph = kb.the(action, sht('shapesGraph')) // A doc
+  actualGraph = kb.sym(test.uri + '__results')
+  if (!dataGraph || !shapesGraph || !actualGraph) throw new Error("Need all params")
+  let opts = { noResultMessage: true } // must be excludded from tests
+  ;(new ShapeChecker(kb, shapesGraph, dataGraph, actualGraph, opts)).execute()
 
-  const mf = $rdf.Namespace('http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#')
-  // var context = 'In test document ' + testDocument
-  var runManifest = function (doc, indent) {
+  expected = kb.the(test, mf('result')) // Node
+  var expectedDoc = kb.statementsMatching(expected)[0].graph // whare is that data anyway?
+  var base  = expected.doc? expected.doc().uri : dataGraph.uri
+  let expectedStatements = forwardTree(expected)
+  console.log(indent + 'Expected statements: ' + expectedStatements.length)
+  let expectedString = statementsToTurtle(kb, expectedStatements, expectedDoc.uri)
+  let actualStatements = kb.statementsMatching(null, null, null, actualGraph)
+  console.log(indent + 'Actual statements: ' + actualStatements.length)
+  let actalString = statementsToTurtle(kb, actualStatements, actualGraph.uri)
+  if (expectedString === actalString) {
+    console.log(indent + '      Match -> passed')
+  } else {
+    console.log(indent + '    -> FAILED, expected:')
+    let ul = '\n__________________________________________________\n'
+    console.log(ul + expectedString + ul + actalString + ul)
+    // process.exit(3) // @@ if stop on first fail
+  }
+}
+registerTest(sht('Validate'), validationTest)
+
+// See https://www.w3.org/TR/rdf11-testcases/
+var runTests = function (doc, indent) {
+  indent = indent || ''
+  // console.log(indent + " .... loading " + doc)
+  kb.fetcher.nowOrWhenFetched(doc, {}, function(ok, message){
+    if (!ok) exitMessage(message)
     indent = indent || ''
-    console.log(indent + 'Manifest: ' + testDocument)
-    let comment = kb.anyValue(testDocument, kb.sym('http://www.w3.org/2000/01/rdf-schema#comment'))
+    console.log(indent + 'Manifest: ' + doc)
+    let comment = kb.anyValue(doc, kb.sym('http://www.w3.org/2000/01/rdf-schema#comment'))
     if (comment) console.log(indent + comment)
     var action, dataGraph, shapesGraph, expected, actualGraph
 
-    kb.each(testDocument, mf('entries')).forEach(function (test) {
-      if (kb.holds(test, a, sht('Validate'))) {
-        console.log('Validation test ' + test)
-        action = kb.the(test, mf('action'))
-        dataGraph = kb.the(action, mf('dataGraph'))
-        shapesGraph = kb.the(action, mf('shapesGraph')) // A doc
-        actualGraph = kb.sym(test.uri + '__results')
-        ;(new ShapeChecker(kb, shapesGraph, dataGraph, actualGraph)).execute()
-
-        expected = kb.the(test, mf('result')) // Node
-        let expectedStatements = forwardTree(expected)
-        let expectedString = $rdf.serialize(expectedStatements)
-        let actalString = $rdf.serialize(actualGraph.statements)
-        if (expectedString === actalString) {
-          console.log(indent + '    -> passed')
+    kb.each(doc, mf('entries')).forEach(function (testList) {
+      console.log(indent + ' entries: ' + testList.elements.length)
+      testList.elements.forEach(function (test) {
+        console.log(indent + '  entry ' + $rdf.Util.uri.refTo(doc.uri, test.uri)) // refto
+        var testDoc
+        if (test.uri.includes('#')){
+          testDoc = test.doc()
         } else {
-          console.log(indent + '    -> FAILED')
-          let ul = '\n__________________________________________________\n'
-          console.log(ul + expectedString + ul + actalString + ul)
+          if (test.uri.endsWith('.ttl')) {
+            testDoc = test
+          } else {
+            testDoc = kb.sym(test.uri + '.ttl') /// needed for shacl tests in file space
+          }
         }
-      }
+        console.log(indent + "loading... " + testDoc)
+        kb.fetcher.nowOrWhenFetched(testDoc, {}, function(ok, message){
+          console.log(indent + "Loaded " + testDoc)
+          if (!ok) exitStatus(message)
+          var klasses = kb.each(test, a)
+          for (let j=0; j<klasses.length; j++){
+            let handler = testHandlers[klasses[j].uri]
+            if (handler){
+              handler(test, '  ' + indent)
+            }
+          }
+        })
+      })
     })
 
-    kb.each(testDocument, mf('include'))
-      .forEach(function (doc) { runManifest(indent + '   ', doc) })
+// eg https://github.com/w3c/data-shapes/blob/gh-pages/data-shapes-test-suite/tests/manifest.ttl
+    let includes = kb.each(doc, mf('include'))
+    console.log(indent + ' includes: ' + includes.length + ' for ' + doc )
+    includes.forEach(function (doc2) { runTests(doc2, indent + ' ') })
     console.log(indent + 'Done ' + doc)
-  }
-  runManifest(testDocument)
+  })
 }
 
 // Store linked data in separe files
@@ -302,7 +354,7 @@ var spray = function (rootURI, doubleLinked) {
     }
     console.log('We have ' + sts.length + ' total statements in document ' + docURI)
     var fileName = docURI.slice(7) //
-    var out = statementsToTurtle(sts, docURI)
+    var out = statementsToTurtle(kb, sts, docURI)
     console.log('To be written to ' + fileName + ':\n' + out + '\n')
   /*
       fs.writeFile(fileName, out, function (err) {
