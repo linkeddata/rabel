@@ -31,12 +31,13 @@ whereas these can only input:
  * application/rdfa
  * application/xml
 
- #### Example
+ #### Examples
 
 ```
-   rabel -format=application/xml -in=foo.xml -format=text/turtle -out=foo.ttl
 
-   rabel part*.ttl -out=whole.ttl
+rabel -format=application/xml -in=foo.xml -format=text/turtle -out=foo.ttl
+
+rabel part*.ttl -out=whole.ttl
 ```
 ## Details
 Currently rabel can read from the web or files, and write only to files.  Filenames are deemed to be relative URIs just taken relative to file:///{pwd}/ where {pwd} is the  current working directory.

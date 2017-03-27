@@ -1,7 +1,7 @@
 {
   "name": "rabel",
   "description": "Linked Data command line utility",
-  "version": "0.2.13",
+  "version": "0.3.1",
   "author": {
     "name": "Tim Berners-Lee",
     "email": "timbl@w3.org"
@@ -15,7 +15,8 @@
   "homepage": "http://github.com/linkeddata/rabel",
   "bugs": "http://github.com/linkeddata/rabel/issues",
   "dependencies": {
-    "rdflib": "^0.2.9",
+    "rdflib": "^0.15.0",
+    "shacl-check": "^0.0.1",
     "xmldom": "^0.1.22"
   },
   "bin": {

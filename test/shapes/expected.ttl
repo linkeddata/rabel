@@ -1,0 +1,48 @@
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix per: <http://datashapes.org/sh/tests/core/complex/personexample.test#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Alice;
+                sh:resultMessage
+                    "Error 987-65-432A should match pattern  ^\\d{3}-\\d{2}-\\d{4}$";
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:PatternConstraintComponent;
+                sh:sourceShape per:PersonShape;
+                sh:value "987-65-432A"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Bob;
+                sh:resultMessage
+                    "Too many (2) <http://datashapes.org/sh/tests/core/complex/personexample.test#ssn> on <http://datashapes.org/sh/tests/core/complex/personexample.test#Bob>";
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
+                sh:sourceShape per:PersonShape
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Calvin;
+                sh:resultMessage
+                    """Closed node has extra data: <http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin> <http://datashapes.org/sh/tests/core/complex/personexample.test#birthDate> "1999-09-09"^^<http://www.w3.org/2001/XMLSchema#date> .""";
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClosedConstraintComponent;
+                sh:sourceShape per:PersonShape;
+                sh:value "1999-09-09"^^XML:date
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Calvin;
+                sh:resultMessage
+                    "Error <http://datashapes.org/sh/tests/core/complex/personexample.test#UntypedCompany> should be in class <http://datashapes.org/sh/tests/core/complex/personexample.test#Company>";
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClassConstraintComponent;
+                sh:sourceShape per:PersonShape
+            ]
+].
