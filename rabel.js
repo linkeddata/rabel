@@ -150,8 +150,7 @@ var doNext = function (remaining) {
         console.log('shapeDoc ' + shapeDoc)
         fetcher.nowOrWhenFetched(shapeDoc, {}, function (ok, body, xhr) {
           if (!ok) {
-            console.log("Error loading " + doc + ": " + body)
-            process.exit(1)
+            exitMessage("Error loading " + doc + ": " + body)
           } else {
             console.log("Loaded shape file " + shapeDoc)
             let checker = new ShapeChecker(kb, shapeDoc, targetDocument, reportDocument)
@@ -219,7 +218,7 @@ var doNext = function (remaining) {
      if (true) setTimeout(wait, 3000);
   })();
 */
-  // process.exit(0)    No!!! node must wait for stuff to finish
+  process.exit(0)    // No!!! node must wait for stuff to finish
 }
 
 var statementsToTurtle = function (kb, statements, base) {
