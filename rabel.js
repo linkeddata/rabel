@@ -18,7 +18,7 @@ var helpMessage =
 '-help         This message \n' +
 '-in=uri       Load a web resource or file\n' +
 '-out=filename Output in eth current content type\n' +
-'-report=file  set the report file desiation for future validation\n' +
+'-report=file  set the report file destination for future validation\n' +
 '-size         Give the current store\n' +
 '-spray=base   Write out linked data to lots of different linked files CAREFUL!\n' +
 '-test=manifest   Run tests as described in the test manifest\n' +

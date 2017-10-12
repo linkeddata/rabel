@@ -10,14 +10,18 @@ To install,
 
 Commands look like unix options are executed *in order* from left to right. They  include:
 ```
--base=rrrr    Set the current base URI (relative URI)
+-base=rrrr    Set the current base URI (relative URI, default is file:///$PWD)
 -clear        Clear the current store
--dump         Serialize the store in current content-type to the console
+-dump         Serialize the current store in current content type
 -format=cccc  Set the current content-type
 -help         This message
 -in=uri       Load a web resource or file
 -out=filename Output in the current content type
--size         Give the current store size in triples
+-report=file  set the report file destination for future validation
+-size         Give the current store
+-spray=base   Write out linked data to lots of different linked files CAREFUL!
+-test=manifest   Run tests as described in the test manifest
+-validate=shapeFile   Run a SHACL validator on the data loaded by previous in=x
 -version      Give the version of this program
 ```
 
