@@ -1,7 +1,7 @@
 {
   "name": "rabel",
   "description": "Linked Data command line utility",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": {
     "name": "Tim Berners-Lee",
     "email": "timbl@w3.org"
@@ -22,7 +22,6 @@
   "bin": {
     "rabel": "rabel.js"
   },
-
   "devDependencies": {},
   "main": "rabel.js"
 }
