@@ -27,7 +27,7 @@ var helpMessage =
 '\n' +
 'Formats are given as MIME types, such as text/turtle (default), application/rdf+xml, etc\n' +
 'In input only, can parse application/xml, with smarts about IANA and GPX files.\n' +
-'\n'
+'\n'  + 'Default base URI: ' + base + '\n'
 
 var $rdf = require('rdflib')
 var fs = require('fs')
@@ -65,6 +65,7 @@ var exitMessage = function (message) {
 var doNext = function (remaining) {
 
   var loadDocument = function (right) {
+
     var doc = $rdf.sym($rdf.uri.join(right, base))
     targetDocument = targetDocument || doc // remember first doc
     // console.log("Document is " + targetDocument)
@@ -96,7 +97,7 @@ var doNext = function (remaining) {
     var fileName = doc.uri.slice(7) //
     fs.writeFile(fileName, outText, function (err) {
       if (err) {
-        exitMessage('Error writing file <' + right + '> :' + err)
+        exitMessage('Error writing file ' + doc + ' :' + err)
       }
       console.log('Written ' + doc)
       doNext(remaining)
@@ -167,8 +168,7 @@ var doNext = function (remaining) {
         break
 
       case '-in':
-        doc = $rdf.sym($rdf.uri.join(right, base))
-        loadDocument(doc)
+        loadDocument(right)
         return
 
       case '-out':
@@ -177,12 +177,12 @@ var doNext = function (remaining) {
         return
 
       case '-spray':
-        doc = $rdf.sym($rdf.uri.join(right, base)) // go back to folder
-        if (doc.uri.slice(0, 8) !== 'file:///') {
+        var root = $rdf.sym($rdf.uri.join(right, base)) // go back to folder
+        if (root.uri.slice(0, 8) !== 'file:///') {
           exitMessage('Can only write files just now, sorry: ' + doc.uri)
         }
         try {
-          spray(doc.uri)
+          spray(root.uri, targetDocument)
         } catch (e) {
           exitMessage('Error in spray: ' + e)
         }
@@ -198,8 +198,13 @@ var doNext = function (remaining) {
         console.log("Loading " + doc)
         fetcher.nowOrWhenFetched(doc, {}, function(ok, message){
           if (!ok) exitMessage("Error loading tests " + doc + ": " + message)
-          runTests(doc)
-          doNext(remaining)
+          runTests(doc).then(function(issues){
+            console.log("DONE ALL TESTS. Issue array length: " + issues.length)
+            issues.forEach(function(issue){
+              console.log('  Test: ' + issue.test)
+            })
+            doNext(remaining)
+          })
         })
         return
 
@@ -229,7 +234,9 @@ var statementsToTurtle = function (kb, statements, base) {
   return sz.statementsToN3(statements)
 }
 
-var validationTest = function(test, indent){
+// Returns a promise of an issues list
+var validationTest = function(test){
+  const indent = '     '
   var forwardTree = function (x) {
     var sts = []
     var f = function (x) {
@@ -262,64 +269,91 @@ var validationTest = function(test, indent){
   let expectedString = statementsToTurtle(kb, expectedStatements, expectedDoc.uri)
   let actualStatements = kb.statementsMatching(null, null, null, actualGraph)
   console.log(indent + 'Actual statements: ' + actualStatements.length)
-  let actalString = statementsToTurtle(kb, actualStatements, actualGraph.uri)
-  if (expectedString === actalString) {
+  let actualString = statementsToTurtle(kb, actualStatements, actualGraph.uri)
+  let issues = []
+  if (expectedString === actualString) {
     console.log(indent + '      Match -> passed')
   } else {
     console.log(indent + '    -> FAILED, expected:')
     let ul = '\n__________________________________________________\n'
-    console.log(ul + expectedString + ul + actalString + ul)
-    // process.exit(3) // @@ if stop on first fail
+    console.log(ul + expectedString + ul + actualString + ul)
+    issues.push({ test, expectedString, actualString, // generic
+       dataGraph, shapesGraph, actualGraph}) // test type specific
   }
+  return Promise.resolve(issues)
 }
 registerTest(sht('Validate'), validationTest)
 
-// See https://www.w3.org/TR/rdf11-testcases/
-var runTests = function (doc, indent) {
-  indent = indent || ''
-  // console.log(indent + " .... loading " + doc)
-  kb.fetcher.nowOrWhenFetched(doc, {}, function(ok, message){
-    if (!ok) exitMessage(message)
-    indent = indent || ''
-    console.log(indent + 'Manifest: ' + doc)
-    let comment = kb.anyValue(doc, kb.sym('http://www.w3.org/2000/01/rdf-schema#comment'))
-    if (comment) console.log(indent + comment)
-    var action, dataGraph, shapesGraph, expected, actualGraph
-
-    kb.each(doc, mf('entries')).forEach(function (testList) {
-      console.log(indent + ' entries: ' + testList.elements.length)
-      testList.elements.forEach(function (test) {
-        console.log(indent + '  entry ' + $rdf.Util.uri.refTo(doc.uri, test.uri)) // refto
-        var testDoc
-        if (test.uri.includes('#')){
-          testDoc = test.doc()
-        } else {
-          if (test.uri.endsWith('.ttl')) {
-            testDoc = test
-          } else {
-            testDoc = kb.sym(test.uri + '.ttl') /// needed for shacl tests in file space
-          }
+// Returns promise of issues array
+var doAppropriateTest = function (test){
+  return new Promise(function(resolve, reject){
+    console.log('  -- Do approp test for ' + test)
+    var testDoc
+    if (test.uri.includes('#')){
+      testDoc = test.doc()
+    } else {
+      if (test.uri.endsWith('.ttl')) {
+        testDoc = test
+      } else {
+        testDoc = kb.sym(test.uri + '.ttl') /// needed for shacl tests in file space
+      }
+    }
+    console.log( "loading... " + testDoc)
+    fetcher.load(testDoc).then(function (xhr) {
+      var klasses = kb.each(test, a)
+      var ppp = []
+      for (let j=0; j<klasses.length; j++){
+        let handler = testHandlers[klasses[j].uri]
+        if (handler){
+          handler(test).then(function (issues) {
+            resolve(issues)
+          })
+          break
         }
-        console.log(indent + "loading... " + testDoc)
-        kb.fetcher.nowOrWhenFetched(testDoc, {}, function(ok, message){
-          console.log(indent + "Loaded " + testDoc)
-          if (!ok) exitStatus(message)
-          var klasses = kb.each(test, a)
-          for (let j=0; j<klasses.length; j++){
-            let handler = testHandlers[klasses[j].uri]
-            if (handler){
-              handler(test, '  ' + indent)
-            }
-          }
-        })
+        resolve(null)
+      }
+    })
+    .catch(function (e) {
+      const message = "Error in doAppropriateTest loading " + testDoc + ': ' + e
+      console.log(message)
+      console.log('stack: ' + e.stack.toString())
+      reject(new Error(message))
+    })
+  }) // promise
+}
+
+// See https://www.w3.org/TR/rdf11-testcases/
+// Returns a promise of set of issues
+var runTests = function (doc) {
+  const indent = ''
+  console.log("runTests " + doc)
+  return new Promise(function(resolve, reject){
+    kb.fetcher.load(doc).then(function (xhr) {
+      console.log(indent + 'Manifest loaded: ' + doc)
+      let comment = kb.anyValue(doc, kb.sym('http://www.w3.org/2000/01/rdf-schema#comment'))
+      if (comment) console.log(indent + comment)
+      var action, dataGraph, shapesGraph, expected, actualGraph
+      var testList = kb.any(doc, mf('entries'))
+      let promises = []
+      if (testList) {
+        testList = testList.elements
+        console.log("Entries " + testList.length)
+        promises = testList.map(doAppropriateTest)
+      }
+      let includes = kb.each(doc, mf('include'))
+      console.log(indent + ' includes: ' + includes.length + ' for ' + doc )
+      promises = promises.concat(includes.map(runTests))
+      Promise.all(promises).then(function(issues){
+        console.log('Done with ' + doc + ': ' + issues ? issues.length : "ISSUES ERROR @@@")
+        resolve(issues) // @@ mayeb have to concat subarrays
+      })
+      .catch(function (e) {
+        const message = "ERROR in runTests loading " + doc + ': ' + e
+        console.log(message)
+        console.log('stack: ' + e.strack.toString())
+        reject(new Error(message))
       })
     })
-
-// eg https://github.com/w3c/data-shapes/blob/gh-pages/data-shapes-test-suite/tests/manifest.ttl
-    let includes = kb.each(doc, mf('include'))
-    console.log(indent + ' includes: ' + includes.length + ' for ' + doc )
-    includes.forEach(function (doc2) { runTests(doc2, indent + ' ') })
-    console.log(indent + 'Done ' + doc)
   })
 }
 
@@ -328,13 +362,18 @@ var runTests = function (doc, indent) {
 //  Caution: use with care!  This will build a complete linked data
 // database of linked files from master data
 
-var spray = function (rootURI, doubleLinked) {
+var spray = function (rootURI, original, doubleLinked) {
   var docs = []
   console.log('Spray: Root is ' + rootURI)
   var docURI
   var check = function (x) {
+    // console.log('check x= ' + x)
     if (x.uri && x.uri.startsWith(rootURI)) {
       var docURI = x.uri.split('#')[0]
+      if (docURI === original.uri) {
+        // console.log('     (ignoring original file) ' + docURI)
+        return
+      }
       docs[docURI] = docs[docURI] || []
       if (!docs[docURI][x.uri]) console.log('target ' + x)
       docs[docURI][x.uri] = true
@@ -347,23 +386,30 @@ var spray = function (rootURI, doubleLinked) {
     console.log('Document: ' + docURI)
     for (var uri in docs[docURI]) {
       var thing = $rdf.sym(uri)
+      console.log('  Thing: ' + thing)
+
       var connected = kb.connectedStatements(thing)
-      console.log('  We have ' + connected.length + ' statements around ' + thing)
+      console.log('    We have ' + connected.length + ' statements around ' + thing)
       sts = sts.concat(connected)
     }
     console.log('We have ' + sts.length + ' total statements in document ' + docURI)
-    var fileName = docURI.slice(7) //
+    var fileName = docURI.slice(7)  + '.ttl'
     var out = statementsToTurtle(kb, sts, docURI)
+
     console.log('To be written to ' + fileName + ':\n' + out + '\n')
-  /*
-      fs.writeFile(fileName, out, function (err) {
-          if (err) {
-              exitMessage("Error writing file <"+right+"> :" + err)
-          }
-          console.log("Written " + docURI)
-          doNext(remaining)
+
+    var foo = function (fileName, out){
+      var f = fileName
+      fs.writeFile(f, out, function (err) {
+        if (err) {
+          exitMessage("***** Error writing file <" + f + "> :" + err)
+        }
+        console.log("Written ok: " + f)
       })
-  */
+    }
+
+    foo(fileName, out)
+
   }
 }
 
@@ -388,6 +434,7 @@ var readXML = function (targetDocument, options, callback) {
     var DOMParser = require('xmldom').DOMParser
     var doc = new DOMParser().parseFromString(data)
     var root = kb.sym(uri)
+    var nextId = 0
 
     var justTextContent = function (ele) {
       var ch = ele.childNodes
@@ -396,7 +443,7 @@ var readXML = function (targetDocument, options, callback) {
         for (let i = 0; i < ch.length; i++) {
           if (ch[i].nodeType !== 3) {
             if (ch.length > 1 && options.iana && ch[i].nodeType === 1 && ch[i].nodeName === 'xref') {
-              text += ' ' + ch[i].attributes.getNamedItem('data').nodeValue + ' '
+              text += ' ' + ch[i].getAttribute('data') + ' '
             } else {
               return false
             }
@@ -415,6 +462,10 @@ var readXML = function (targetDocument, options, callback) {
       return text
     }
 
+    var randomNamedNode = function(){
+      return kb.sym(root.uri + '#n' + (nextId++))
+    }
+
     // ///////////////////////// GPX SPECIAL
 
     var GPX_predicateMap = {
@@ -430,10 +481,11 @@ var readXML = function (targetDocument, options, callback) {
 
     var IANA_predicateMap = {
       created: { uri: 'http://purl.org/dc/terms/created',
-      type: 'http://www.w3.org/2001/XMLSchema#date' }, // @@CHECK
+          type: 'http://www.w3.org/2001/XMLSchema#date' }, // @@CHECK
       date: { uri: 'http://purl.org/dc/terms/date',
-      type: 'http://www.w3.org/2001/XMLSchema#date' }, // @@CHECK
+          type: 'http://www.w3.org/2001/XMLSchema#date' }, // @@CHECK
       description: { uri: 'http://purl.org/dc/terms/description' }, // @@CHECK
+      title: { uri: 'http://purl.org/dc/terms/title' },
       value: { uri: 'http://www.w3.org/2000/01/rdf-schema#label' },
       note: { uri: 'http://www.w3.org/2000/01/rdf-schema#comment' }
     }
@@ -484,7 +536,8 @@ var readXML = function (targetDocument, options, callback) {
           return kb.sym(local + localid)
         }
       }
-      /*   <record date="2016-08-12">
+      /*  Data looks like:
+            <record date="2016-08-12">
               <name>vnd.ascii-art</name>
               <xref type="person" data="Kim_Scarborough"/>
               <file type="template">text/vnd.ascii-art</file>
@@ -492,8 +545,25 @@ var readXML = function (targetDocument, options, callback) {
             */
       for (let i = 0; i < ch.length; i++) {
         var child = ch[i]
-        if (child.nodeName === 'file' && child.attributes && child.attributes.getNamedItem('type')) {
-          return kb.sym($rdf.uri.join(child.textContent, local) + '#')
+        if (child.nodeName === 'file' && child.attributes && child.getAttribute('type')) {
+          return kb.sym($rdf.uri.join(child.textContent, local) + '#Resource')
+        }
+      }
+          /* Data looks like:
+          <record>
+            <name>rfc822</name>
+            <xref type="rfc" data="rfc2045"/>
+            <xref type="rfc" data="rfc2046"/>
+          </record>
+          */
+      let parent = ele.parentNode
+      // console.log('@@ 3 magicIANAsubject tag: ' + ele.tagName + ' parent: ' + parent.tagName )
+      if (ele.tagName === 'record' && parent.tagName === 'registry') {
+        for (let i = 0; i < ch.length; i++) {
+          var child = ch[i]
+          if (child.nodeName === 'name') {
+            return kb.sym($rdf.uri.join(parent.getAttribute('id') + '/' + child.textContent, local) + '#Resource')
+          }
         }
       }
       return null
@@ -560,30 +630,33 @@ var readXML = function (targetDocument, options, callback) {
           if (child.nodeType === 3) { // text
             obj = child.nodeValue.trim() // @@ optional
             if (obj.length !== 0) {
-              console.log($rdf.lit(obj, undefined, type))
+              // console.log($rdf.lit(obj, undefined, type))
               kb.add(subject, kb.sym(ns + ele.nodeName), $rdf.lit(obj, undefined, type), targetDocument)
             // console.log(indent + 'actual text ' + obj)
             } else {
               // console.log(indent + 'whitespace')
             }
           } else if (!(child.nodeType in ignore)) {
+            console.log(indent + '-> ' + child.tagName)
             var txt = justTextContent(child)
             if (txt !== false) {
               if (txt.length > 0) {
                 kb.add(subject, pred, $rdf.lit(txt, undefined, type), targetDocument)
-              // console.log($rdf.lit(txt, undefined, type))
               }
             } else if (options.iana && magicIANAxref(child, local)) {
               kb.add(subject, kb.sym(ns + child.nodeName), magicIANAxref(child, local), targetDocument)
               console.log(indent + 'Magic IANA xref ' + child.nodeName + ': ' + magicIANAxref(child, local))
             } else {
-              if (child.attributes && child.attributes.getNamedItem('id')) {
+              if (child.attributes && child.getAttribute('id')) {
                 if (options.iana && child.nodeName === 'person') {
-                  obj = kb.sym($rdf.uri.join('../person/', local) +
-                    child.attributes.getNamedItem('id').nodeValue + '#')
+                  let who = child.getAttribute('id')
+                  if (!who) throw new Error("Person has no ID")
+                  obj = kb.sym($rdf.uri.join('../person/', local) + who + '#')
                   console.log(indent + 'Person is ' + obj)
                 } else {
-                  obj = kb.sym(local + child.attributes.getNamedItem('id').nodeValue)
+                  let who = child.getAttribute('id')
+                  if (!who) throw new Error("Thing has no ID")
+                  obj = kb.sym(local + child.getAttribute('id'))
                   console.log(indent + 'Local thing is ' + obj)
                 }
               } else if (options.iana && magicIANAsubject(child, local)) {
@@ -591,7 +664,13 @@ var readXML = function (targetDocument, options, callback) {
                 console.log(indent + 'Magic IANA URI ' + obj)
               // kb.add(obj, RDF('type'), RDF('Property') , targetDocument)
               } else {
-                obj = kb.bnode()
+                if (options.iana && child.nodeName === 'uri'){
+                  obj = kb.sym(justTextContent(child))
+                } else if (options.iana && child.nodeName === 'people') {
+                  obj = randomNamedNode()
+                } else {
+                  obj = kb.bnode()
+                }
               }
               kb.add(subject, pred, obj, targetDocument)
               convert(child, obj, indent + '    ')
@@ -607,7 +686,4 @@ var readXML = function (targetDocument, options, callback) {
 
 doNext(process.argv.slice(2))
 
-// {'forceContentType': 'application/rdfa'}
-
-// http://melvincarvalho.com/
-// http://schema.org/
+// ends
