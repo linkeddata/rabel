@@ -16,6 +16,7 @@
   "bugs": "http://github.com/linkeddata/rabel/issues",
   "dependencies": {
     "rdflib": "^0.15.0",
+    "fs-extra": "^4.0.2",
     "shacl-check": "^0.0.1",
     "xmldom": "^0.1.22"
   },

@@ -31,7 +31,9 @@ var helpMessage =
 
 var $rdf = require('rdflib')
 var fs = require('fs')
-var ShapeChecker = require('./../shacl-check/src/shacl-check.js')
+var ensurePath = require('fs-extra').ensureDirSync
+var path = require('path')
+// var ShapeChecker = require('./../shacl-check/src/shacl-check.js')
 
 var kb = $rdf.graph()
 var fetcher = $rdf.fetcher(kb)
@@ -164,6 +166,7 @@ var doNext = function (remaining) {
         return
 
       case '-help':
+      case '--help':
         console.log(helpMessage)
         break
 
@@ -178,9 +181,6 @@ var doNext = function (remaining) {
 
       case '-spray':
         var root = $rdf.sym($rdf.uri.join(right, base)) // go back to folder
-        if (root.uri.slice(0, 8) !== 'file:///') {
-          exitMessage('Can only write files just now, sorry: ' + doc.uri)
-        }
         try {
           spray(root.uri, targetDocument)
         } catch (e) {
@@ -364,7 +364,7 @@ var runTests = function (doc) {
 
 var spray = function (rootURI, original, doubleLinked) {
   var docs = []
-  console.log('Spray: Root is ' + rootURI)
+  console.log('Spray: Stripping ' + rootURI + ' from ' + original.value)
   var docURI
   var check = function (x) {
     // console.log('check x= ' + x)
@@ -400,6 +400,7 @@ var spray = function (rootURI, original, doubleLinked) {
 
     var foo = function (fileName, out){
       var f = fileName
+      ensurePath(path.dirname(f))
       fs.writeFile(f, out, function (err) {
         if (err) {
           exitMessage("***** Error writing file <" + f + "> :" + err)
