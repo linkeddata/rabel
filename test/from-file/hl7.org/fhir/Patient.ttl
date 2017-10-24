@@ -1,0 +1,4 @@
+@prefix fhir: <./>.
+@prefix P: <Patient/>.
+
+   P:example a fhir:Patient .

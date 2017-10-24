@@ -1,0 +1,6 @@
+@prefix : <#>.
+@prefix fhir: <../>.
+@prefix Obs: <./>.
+
+Obs:example a fhir:Observation; fhir:nodeRole fhir:treeRoot.
+

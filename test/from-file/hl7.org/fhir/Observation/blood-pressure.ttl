@@ -1,0 +1,192 @@
+@prefix fhir: <../>.
+@prefix Obs: <./>.
+@prefix id: <http://snomed.info/id/>.
+@prefix owl: <http://loinc.org/owl#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix Pr: <../Practitioner/>.
+@prefix P: <../Patient/>.
+
+Obs:blood-pressure
+    fhir:DomainResource-text
+            [ fhir:Narrative-div
+                """<div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: blood-pressure</p><p><b>meta</b>: </p><p><b>identifier</b>: urn:uuid:187e0c12-8dd2-67e2-99b2-bf273c878281</p><p><b>basedOn</b>: </p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span>(Details : {http://hl7.org/fhir/observation-category code 'vital-signs' = 'Vital Signs', given as 'Vital Signs'})</span></p><p><b>code</b>: Blood pressure systolic &amp; diastolic <span>(Details : {LOINC code '85354-9' = 'lood pressure panel with all children optional', given as 'Bood pressure panel with all children optional'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>effective</b>: 17/09/2012</p><p><b>performer</b>: <a>Practitioner/example</a></p><p><b>interpretation</b>: Below low normal <span>(Details : {http://hl7.org/fhir/v2/0078 code 'L' = 'Low', given as 'low'})</span></p><p><b>bodySite</b>: Right arm <span>(Details : {SNOMED CT code '368209003' = 'Right upper arm', given as 'Right arm'})</span></p><blockquote><p><b>component</b></p><p><b>code</b>: Systolic blood pressure <span>(Details : {LOINC code '8480-6' = 'Systolic blood pressure', given as 'Systolic blood pressure'}; {SNOMED CT code '271649006' = 'Systolic blood pressure', given as 'Systolic blood pressure'}; {http://acme.org/devices/clinical-codes code 'bp-s' = 'bp-s', given as 'Systolic Blood pressure'})</span></p><p><b>value</b>: 107 mmHg<span> (Details: UCUM code mm[Hg] = 'mmHg')</span></p><p><b>interpretation</b>: Normal <span>(Details : {http://hl7.org/fhir/v2/0078 code 'N' = 'Normal', given as 'normal'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Diastolic blood pressure <span>(Details : {LOINC code '8462-4' = 'Diastolic blood pressure', given as 'Diastolic blood pressure'})</span></p><p><b>value</b>: 60 mmHg<span> (Details: UCUM code mm[Hg] = 'mmHg')</span></p><p><b>interpretation</b>: Below low normal <span>(Details : {http://hl7.org/fhir/v2/0078 code 'L' = 'Low', given as 'low'})</span></p></blockquote></div>""";
+            fhir:Narrative-status
+               [ fhir:value "generated" ] ];
+    fhir:Observation-basedOn
+            [ fhir:Reference-identifier
+                    [ fhir:Identifier-system
+                       [ fhir:value "https://acme.org/identifiers" ];
+                    fhir:Identifier-value
+                       [ fhir:value "1234" ] ];
+            fhir:index
+               0 ];
+    fhir:Observation-bodySite
+            [ fhir:CodeableConcept-coding
+                    [ fhir:Coding-code
+                       [ fhir:value "368209003" ];
+                    fhir:Coding-display
+                       [ fhir:value "Right arm" ];
+                    fhir:Coding-system
+                       [ fhir:value "http://snomed.info/sct" ];
+                    fhir:index
+                       0;
+                    a    id:368209003 ] ];
+    fhir:Observation-category
+            [ fhir:CodeableConcept-coding
+                    [ fhir:Coding-code
+                       [ fhir:value "vital-signs" ];
+                    fhir:Coding-display
+                       [ fhir:value "Vital Signs" ];
+                    fhir:Coding-system
+                       [ fhir:value "http://hl7.org/fhir/observation-category" ];
+                    fhir:index
+                       0 ];
+            fhir:index
+               0 ];
+    fhir:Observation-code
+            [ fhir:CodeableConcept-coding
+                    [ fhir:Coding-code
+                       [ fhir:value "85354-9" ];
+                    fhir:Coding-display
+                            [ fhir:value
+                               "Bood pressure panel with all children optional" ];
+                    fhir:Coding-system
+                       [ fhir:value "http://loinc.org" ];
+                    fhir:index
+                       0;
+                    a    owl:85354-9 ];
+            fhir:CodeableConcept-text
+               [ fhir:value "Blood pressure systolic & diastolic" ] ];
+    fhir:Observation-component
+            [ fhir:Observation-component-code
+                    [ fhir:CodeableConcept-coding
+                            [ fhir:Coding-code
+                               [ fhir:value "8480-6" ];
+                            fhir:Coding-display
+                               [ fhir:value "Systolic blood pressure" ];
+                            fhir:Coding-system
+                               [ fhir:value "http://loinc.org" ];
+                            fhir:index
+                               0;
+                            a    owl:8480-6 ],
+                            [ fhir:Coding-code
+                               [ fhir:value "271649006" ];
+                            fhir:Coding-display
+                               [ fhir:value "Systolic blood pressure" ];
+                            fhir:Coding-system
+                               [ fhir:value "http://snomed.info/sct" ];
+                            fhir:index
+                               1;
+                            a    id:271649006 ],
+                            [ fhir:Coding-code
+                               [ fhir:value "bp-s" ];
+                            fhir:Coding-display
+                               [ fhir:value "Systolic Blood pressure" ];
+                            fhir:Coding-system
+                                    [ fhir:value
+                                       "http://acme.org/devices/clinical-codes" ];
+                            fhir:index
+                               2 ] ];
+            fhir:Observation-component-interpretation
+                    [ fhir:CodeableConcept-coding
+                            [ fhir:Coding-code
+                               [ fhir:value "N" ];
+                            fhir:Coding-display
+                               [ fhir:value "normal" ];
+                            fhir:Coding-system
+                               [ fhir:value "http://hl7.org/fhir/v2/0078" ];
+                            fhir:index
+                               0 ];
+                    fhir:CodeableConcept-text
+                       [ fhir:value "Normal" ] ];
+            fhir:Observation-component-valueQuantity
+                    [ fhir:Quantity-code
+                       [ fhir:value "mm[Hg]" ];
+                    fhir:Quantity-system
+                       [ fhir:value "http://unitsofmeasure.org" ];
+                    fhir:Quantity-unit
+                       [ fhir:value "mmHg" ];
+                    fhir:Quantity-value
+                       [ fhir:value "107"^^XML:decimal ] ];
+            fhir:index
+               0 ],
+            [ fhir:Observation-component-code
+                    [ fhir:CodeableConcept-coding
+                            [ fhir:Coding-code
+                               [ fhir:value "8462-4" ];
+                            fhir:Coding-display
+                               [ fhir:value "Diastolic blood pressure" ];
+                            fhir:Coding-system
+                               [ fhir:value "http://loinc.org" ];
+                            fhir:index
+                               0;
+                            a    owl:8462-4 ] ];
+            fhir:Observation-component-interpretation
+                    [ fhir:CodeableConcept-coding
+                            [ fhir:Coding-code
+                               [ fhir:value "L" ];
+                            fhir:Coding-display
+                               [ fhir:value "low" ];
+                            fhir:Coding-system
+                               [ fhir:value "http://hl7.org/fhir/v2/0078" ];
+                            fhir:index
+                               0 ];
+                    fhir:CodeableConcept-text
+                       [ fhir:value "Below low normal" ] ];
+            fhir:Observation-component-valueQuantity
+                    [ fhir:Quantity-code
+                       [ fhir:value "mm[Hg]" ];
+                    fhir:Quantity-system
+                       [ fhir:value "http://unitsofmeasure.org" ];
+                    fhir:Quantity-unit
+                       [ fhir:value "mmHg" ];
+                    fhir:Quantity-value
+                       [ fhir:value "60"^^XML:decimal ] ];
+            fhir:index
+               1 ];
+    fhir:Observation-effectiveDateTime
+       [ fhir:value "2012-09-17"^^XML:date ];
+    fhir:Observation-identifier
+            [ fhir:Identifier-system
+               [ fhir:value "urn:ietf:rfc:3986" ];
+            fhir:Identifier-value
+               [ fhir:value "urn:uuid:187e0c12-8dd2-67e2-99b2-bf273c878281" ];
+            fhir:index
+               0 ];
+    fhir:Observation-interpretation
+            [ fhir:CodeableConcept-coding
+                    [ fhir:Coding-code
+                       [ fhir:value "L" ];
+                    fhir:Coding-display
+                       [ fhir:value "low" ];
+                    fhir:Coding-system
+                       [ fhir:value "http://hl7.org/fhir/v2/0078" ];
+                    fhir:index
+                       0 ];
+            fhir:CodeableConcept-text
+               [ fhir:value "Below low normal" ] ];
+    fhir:Observation-performer
+            [ fhir:Reference-reference
+               [ fhir:value "Practitioner/example" ];
+            fhir:index
+               0;
+            fhir:link
+               Pr:example ];
+    fhir:Observation-status
+       [ fhir:value "final" ];
+    fhir:Observation-subject
+            [ fhir:Reference-reference
+               [ fhir:value "Patient/example" ];
+            fhir:link
+               P:example ];
+    fhir:Resource-id
+       [ fhir:value "blood-pressure" ];
+    fhir:Resource-meta
+            [ fhir:Meta-profile
+                    [ fhir:index
+                       0;
+                    fhir:value
+                       "http://hl7.org/fhir/StructureDefinition/vitalsigns" ] ];
+    fhir:nodeRole
+       fhir:treeRoot;
+    a    fhir:Observation.
