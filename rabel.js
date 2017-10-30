@@ -33,7 +33,7 @@ var $rdf = require('rdflib')
 var fs = require('fs')
 var ensurePath = require('fs-extra').ensureDirSync
 var path = require('path')
-// var ShapeChecker = require('./../shacl-check/src/shacl-check.js')
+var ShapeChecker = require('./../shacl-check/src/shacl-check.js')
 
 var kb = $rdf.graph()
 var fetcher = $rdf.fetcher(kb)
@@ -152,13 +152,19 @@ var doNext = function (remaining) {
         let shapeDoc = $rdf.sym($rdf.uri.join(right, base))
         console.log('shapeDoc ' + shapeDoc)
         fetcher.nowOrWhenFetched(shapeDoc, {}, function (ok, body, xhr) {
+          const sh = $rdf.Namespace('http://www.w3.org/ns/shacl#')
           if (!ok) {
             exitMessage("Error loading " + doc + ": " + body)
           } else {
             console.log("Loaded shape file " + shapeDoc)
             let checker = new ShapeChecker(kb, shapeDoc, targetDocument, reportDocument)
             checker.execute()
-            console.log('Validation done.')
+            let count = kb.each(null, RDF('type'), sh('ValidationResult')).length
+            let levels = [ 'Info', 'Warning', 'Violation']
+              .map( z => z + ': ' + kb.each(null, sh('resultSeverity'), sh(z)).length )
+              .join(', ')
+            console.log('Validation done, ' + count + ' issues. ' + levels)
+            console.log('' + kb.each(null, null, null, reportDocument).length + ' triples in report.')
             targetDocument = reportDocument
             writeDocument(reportDocument, reportDocument) // and move on to next command
           }
