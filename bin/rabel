@@ -1,0 +1,259 @@
+#!/usr/bin/env node
+
+'use strict';
+
+/**
+ */
+
+let path = require('path')
+let program = require('commander')
+let args = [path.join(__dirname, '_mocha')]
+let fs = require('fs')
+let resolve = path.resolve
+let exists = fs.existsSync || path.existsSync
+let join = path.join
+let cwd = process.cwd()
+let rabel = require('../');
+var $rdf = require('rdflib')
+var kb = $rdf.graph()
+var fetcher = $rdf.fetcher(kb, {a:1})
+var reportDocument, targetDocument
+var contentType = 'text/turtle'
+// var ShapeChecker = require('./../shacl-check/src/shacl-check.js')
+
+var base = 'file://' + process.cwd() + '/'
+var helpMessage =
+'Utilty data converter for linked data\n' +
+'\n' +
+'Commands in unix option form are executed left to right, and include:\n' +
+'\n' +
+'-base=rrrr    Set the current base URI (relative URI, default is ' + base + ')\n' +
+'-clear        Clear the current store\n' +
+'-dump         Serialize the current store in current content type\n' +
+'-format=cccc  Set the current content-type\n' +
+'-help         This message \n' +
+'-in=uri       Load a web resource or file\n' +
+'-out=filename Output in eth current content type\n' +
+'-report=file  set the report file destination for future validation\n' +
+'-size         Give the current store\n' +
+'-spray=base   Write out linked data to lots of different linked files CAREFUL!\n' +
+'-test=manifest   Run tests as described in the test manifest\n' +
+'-validate=shapeFile   Run a SHACL validator on the data loaded by previous in=x\n' +
+'-version      Give the version of this program\n' +
+'\n' +
+'Formats are given as MIME types, such as text/turtle (default), application/rdf+xml, etc\n' +
+'In input only, can parse application/xml, with smarts about IANA and GPX files.\n' +
+'\n'  + 'Default base URI: ' + base + '\n'
+
+// Load mocha.opts into process.argv
+// Must be loaded here to handle node-specific options
+getOptions()
+
+function getOptions () {
+  var optsPath = process.argv.indexOf('--opts') === -1
+    ? 'test/mocha.opts'
+    : process.argv[process.argv.indexOf('--opts') + 1]
+
+  try {
+    var opts = fs.readFileSync(optsPath, 'utf8')
+      .replace(/\\\s/g, '%20')
+      .split(/\s/)
+      .filter(Boolean)
+      .map(function (value) {
+        return value.replace(/%20/g, ' ')
+      })
+
+    process.argv = process.argv
+      .slice(0, 2)
+      .concat(opts.concat(process.argv.slice(2)))
+  } catch (err) {
+    // ignore
+  }
+
+}
+
+var exitMessage = function (message) {
+  throw Error(message)
+}
+
+var doNext = function (remaining) {
+
+  var loadDocument = function (right) {
+
+    var doc = $rdf.sym($rdf.uri.join(right, base))
+    targetDocument = targetDocument || doc // remember first doc
+    // console.log("Document is " + targetDocument)
+    if (contentType === 'application/xml') {
+      rabel.readXML(doc, {}, function (ok, body, xhr) {
+        rabel.check(ok, body, xhr ? xhr.status : undefined)
+        console.log('Loaded XML ' + targetDocument)
+        doNext(remaining)
+      }, kb) // target, kb, base, contentType, callback
+    } else {
+      fetcher.nowOrWhenFetched(doc, {}, function (ok, body, xhr) {
+        rabel.check(ok, body, xhr ? xhr.status : undefined)
+        console.log('Loaded  ' + doc)
+        doNext(remaining)
+      }) // target, kb, base, contentType, callback
+    }
+  }
+  // Writes the data we have in the store under targetDocument out to file doc
+  var writeDocument = function (targetDocument, doc) {
+    console.log('  writing ... ' + doc)
+    try {
+      var outText = $rdf.serialize(targetDocument, kb, targetDocument.uri, contentType)
+    } catch (e) {
+      exitMessage('Error in serializer: ' + e)
+    }
+    if (doc.uri.slice(0, 8) !== 'file:///') {
+      exitMessage('Can only write files just now, sorry: ' + doc.uri)
+    }
+    var fileName = doc.uri.slice(7) //
+    fs.writeFile(fileName, outText, function (err) {
+      if (err) {
+        exitMessage('Error writing file ' + doc + ' :' + err)
+      }
+      console.log('Written ' + doc)
+      doNext(remaining)
+    })
+  }
+
+  while (remaining.length) {
+    let arg = remaining.shift()
+    let command = arg.split('=')
+    let left = command[0]
+    let right = command[1]
+
+    if (left.slice(0, 1) !== '-') {
+      loadDocument(arg)
+      return
+    }
+    let doc
+    switch (left) {
+      case '-base':
+        base = $rdf.uri.join(right, base)
+        break
+
+      case '-clear':
+        kb = $rdf.graph()
+        break
+
+      case '-dump':
+        console.log('Serialize ' + targetDocument + ' as ' + contentType)
+        try {
+          var out = $rdf.serialize(targetDocument, kb, targetDocument.uri, contentType)
+        } catch (e) {
+          exitMessage('Error in serializer: ' + e)
+        }
+        console.log('Result: ' + out)
+        break
+
+      case '-format':
+        contentType = right
+        break
+
+      case '-report':
+        reportDocument = $rdf.sym($rdf.uri.join(right, base))
+        break
+
+      case '-validate':
+        if (!targetDocument) {
+          console.log('Load data to be validated before -validate=shapefile')
+          process.exit(1)
+        }
+        let shapeDoc = $rdf.sym($rdf.uri.join(right, base))
+        console.log('shapeDoc ' + shapeDoc)
+        fetcher.nowOrWhenFetched(shapeDoc, {}, function (ok, body, xhr) {
+          const sh = $rdf.Namespace('http://www.w3.org/ns/shacl#')
+          if (!ok) {
+            exitMessage("Error loading " + doc + ": " + body)
+          } else {
+            console.log("Loaded shape file " + shapeDoc)
+            let checker = new ShapeChecker(kb, shapeDoc, targetDocument, reportDocument)
+            checker.execute()
+            console.log('Validation done.')
+            let count = kb.each(null, RDF('type'), sh('ValidationResult')).length
+            let levels = [ 'Info', 'Warning', 'Violation']
+              .map( z => z + ': ' + kb.each(null, sh('resultSeverity'), sh(z)).length )
+              .join(', ')
+            console.log('Validation done, ' + count + ' issues. ' + levels)
+            console.log('' + kb.each(null, null, null, reportDocument).length + ' triples in report.')
+            targetDocument = reportDocument
+            writeDocument(reportDocument, reportDocument) // and move on to next command
+          }
+        })
+        return
+
+      case '-help':
+      case '--help':
+        console.log(helpMessage)
+        break
+
+      case '-in':
+        loadDocument(right)
+        return
+
+      case '-out':
+        doc = $rdf.sym($rdf.uri.join(right, base))
+        writeDocument(targetDocument, doc)
+        return
+
+      case '-spray':
+        var root = $rdf.sym($rdf.uri.join(right, base)) // go back to folder
+        try {
+          rabel.spray(root.uri, targetDocument, exitMessage, kb, function () {
+            doNext(remaining)
+          })
+        } catch (e) {
+          let throwMe = Error('Error in spray: ' + e)
+          throwMe.stack = e.stack
+          throw throwMe
+        }
+        return
+
+      case '-size':
+        console.log(kb.statements.length + ' triples')
+        doNext(remaining)
+        break
+
+      case '-test':
+        doc = $rdf.sym($rdf.uri.join(right, base))
+        console.log("Loading " + doc)
+        fetcher.nowOrWhenFetched(doc, {}, function(ok, message){
+          if (!ok) exitMessage("Error loading tests " + doc + ": " + message)
+          runTests(doc).then(function(issues){
+            console.log("DONE ALL TESTS. Issue array length: " + issues.length)
+            issues.forEach(function(issue){
+              console.log('  Test: ' + issue.test)
+            })
+            doNext(remaining)
+          })
+        })
+        return
+
+      case '-version':
+        console.log('rdflib built: ' + $rdf.buildTime)
+        break
+
+      default:
+        console.log('Unknown command: ' + left)
+        console.log(helpMessage)
+        process.exit(1)
+    }
+  }
+/*
+  (function wait () {
+     if (true) setTimeout(wait, 3000);
+  })();
+*/
+  process.exit(0)    // No!!! node must wait for stuff to finish
+  // process.on('exit', function() { process.exit(exitCode); });
+}
+
+try {
+  doNext(process.argv.slice(2))
+} catch (e) {
+  console.error('stack' in e ? e.stack : e)
+  process.exit(4)
+}
+
