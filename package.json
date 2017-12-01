@@ -21,8 +21,12 @@
     "xmldom": "^0.1.22"
   },
   "bin": {
-    "rabel": "rabel.js"
+    "rabel": "./bin/rabel"
   },
-  "devDependencies": {},
-  "main": "rabel.js"
+  "devDependencies": {
+    "fs-extra": "^4.0.2",
+    "mocha": "^4.0.1",
+    "mock-http-server": "^0.2.0"
+  },
+  "main": "index.js"
 }

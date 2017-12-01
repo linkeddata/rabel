@@ -5,47 +5,17 @@
 //
 //
 
-var base = 'file://' + process.cwd() + '/'
-var helpMessage =
-'Utilty data converter for linked data\n' +
-'\n' +
-'Commands in unix option form are executed left to right, and include:\n' +
-'\n' +
-'-base=rrrr    Set the current base URI (relative URI, default is ' + base + ')\n' +
-'-clear        Clear the current store\n' +
-'-dump         Serialize the current store in current content type\n' +
-'-format=cccc  Set the current content-type\n' +
-'-help         This message \n' +
-'-in=uri       Load a web resource or file\n' +
-'-out=filename Output in eth current content type\n' +
-'-report=file  set the report file destination for future validation\n' +
-'-size         Give the current store\n' +
-'-spray=base   Write out linked data to lots of different linked files CAREFUL!\n' +
-'-test=manifest   Run tests as described in the test manifest\n' +
-'-validate=shapeFile   Run a SHACL validator on the data loaded by previous in=x\n' +
-'-version      Give the version of this program\n' +
-'\n' +
-'Formats are given as MIME types, such as text/turtle (default), application/rdf+xml, etc\n' +
-'In input only, can parse application/xml, with smarts about IANA and GPX files.\n' +
-'\n'  + 'Default base URI: ' + base + '\n'
-
 var $rdf = require('rdflib')
 var fs = require('fs')
 var ensurePath = require('fs-extra').ensureDirSync
 var path = require('path')
 // var ShapeChecker = require('./../shacl-check/src/shacl-check.js')
 
-var kb = $rdf.graph()
-var fetcher = $rdf.fetcher(kb)
-
 const RDF = $rdf.Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 const a = RDF('type')
 const mf = $rdf.Namespace('http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#')
 const sht = $rdf.Namespace('http://www.w3.org/ns/shacl/test-suite#')
 
-
-var contentType = 'text/turtle'
-var reportDocument, targetDocument
 
 var testHandlers = []
 var registerTest = function(klass, handler){
@@ -59,173 +29,6 @@ var check = function (ok, message, status) {
   }
 }
 
-var exitMessage = function (message) {
-  console.log(message)
-  process.exit(4)
-}
-
-var doNext = function (remaining) {
-
-  var loadDocument = function (right) {
-
-    var doc = $rdf.sym($rdf.uri.join(right, base))
-    targetDocument = targetDocument || doc // remember first doc
-    // console.log("Document is " + targetDocument)
-    if (contentType === 'application/xml') {
-      readXML(doc, {}, function (ok, body, xhr) {
-        check(ok, body, xhr ? xhr.status : undefined)
-        console.log('Loaded XML ' + targetDocument)
-        doNext(remaining)
-      }) // target, kb, base, contentType, callback
-    } else {
-      fetcher.nowOrWhenFetched(doc, {}, function (ok, body, xhr) {
-        check(ok, body, xhr ? xhr.status : undefined)
-        console.log('Loaded  ' + doc)
-        doNext(remaining)
-      }) // target, kb, base, contentType, callback
-    }
-  }
-  // Writes the data we have in the store under targetDocument out to file doc
-  var writeDocument = function (targetDocument, doc) {
-    console.log('  writing ... ' + doc)
-    try {
-      var outText = $rdf.serialize(targetDocument, kb, targetDocument.uri, contentType)
-    } catch (e) {
-      exitMessage('Error in serializer: ' + e)
-    }
-    if (doc.uri.slice(0, 8) !== 'file:///') {
-      exitMessage('Can only write files just now, sorry: ' + doc.uri)
-    }
-    var fileName = doc.uri.slice(7) //
-    fs.writeFile(fileName, outText, function (err) {
-      if (err) {
-        exitMessage('Error writing file ' + doc + ' :' + err)
-      }
-      console.log('Written ' + doc)
-      doNext(remaining)
-    })
-  }
-
-  while (remaining.length) {
-    let arg = remaining.shift()
-    let command = arg.split('=')
-    let left = command[0]
-    let right = command[1]
-
-    if (left.slice(0, 1) !== '-') {
-      loadDocument(arg)
-      return
-    }
-    let doc
-    switch (left) {
-      case '-base':
-        base = $rdf.uri.join(right, base)
-        break
-
-      case '-clear':
-        kb = $rdf.graph()
-        break
-
-      case '-dump':
-        console.log('Serialize ' + targetDocument + ' as ' + contentType)
-        try {
-          var out = $rdf.serialize(targetDocument, kb, targetDocument.uri, contentType)
-        } catch (e) {
-          exitMessage('Error in serializer: ' + e)
-        }
-        console.log('Result: ' + out)
-        break
-
-      case '-format':
-        contentType = right
-        break
-
-      case '-report':
-        reportDocument = $rdf.sym($rdf.uri.join(right, base))
-        break
-
-      case '-validate':
-        if (!targetDocument) {
-          console.log('Load data to be validated before -validate=shapefile')
-          process.exit(1)
-        }
-        let shapeDoc = $rdf.sym($rdf.uri.join(right, base))
-        console.log('shapeDoc ' + shapeDoc)
-        fetcher.nowOrWhenFetched(shapeDoc, {}, function (ok, body, xhr) {
-          if (!ok) {
-            exitMessage("Error loading " + doc + ": " + body)
-          } else {
-            console.log("Loaded shape file " + shapeDoc)
-            let checker = new ShapeChecker(kb, shapeDoc, targetDocument, reportDocument)
-            checker.execute()
-            console.log('Validation done.')
-            targetDocument = reportDocument
-            writeDocument(reportDocument, reportDocument) // and move on to next command
-          }
-        })
-        return
-
-      case '-help':
-      case '--help':
-        console.log(helpMessage)
-        break
-
-      case '-in':
-        loadDocument(right)
-        return
-
-      case '-out':
-        doc = $rdf.sym($rdf.uri.join(right, base))
-        writeDocument(targetDocument, doc)
-        return
-
-      case '-spray':
-        var root = $rdf.sym($rdf.uri.join(right, base)) // go back to folder
-        try {
-          spray(root.uri, targetDocument)
-        } catch (e) {
-          exitMessage('Error in spray: ' + e)
-        }
-        return
-
-      case '-size':
-        console.log(kb.statements.length + ' triples')
-        doNext(remaining)
-        break
-
-      case '-test':
-        doc = $rdf.sym($rdf.uri.join(right, base))
-        console.log("Loading " + doc)
-        fetcher.nowOrWhenFetched(doc, {}, function(ok, message){
-          if (!ok) exitMessage("Error loading tests " + doc + ": " + message)
-          runTests(doc).then(function(issues){
-            console.log("DONE ALL TESTS. Issue array length: " + issues.length)
-            issues.forEach(function(issue){
-              console.log('  Test: ' + issue.test)
-            })
-            doNext(remaining)
-          })
-        })
-        return
-
-      case '-version':
-        console.log('rdflib built: ' + $rdf.buildTime)
-        break
-
-      default:
-        console.log('Unknown command: ' + left)
-        console.log(helpMessage)
-        process.exit(1)
-    }
-  }
-/*
-  (function wait () {
-     if (true) setTimeout(wait, 3000);
-  })();
-*/
-  process.exit(0)    // No!!! node must wait for stuff to finish
-}
-
 var statementsToTurtle = function (kb, statements, base) {
   var sz = new $rdf.Serializer(kb)
   sz.suggestNamespaces(kb.namespaces)
@@ -235,7 +38,7 @@ var statementsToTurtle = function (kb, statements, base) {
 }
 
 // Returns a promise of an issues list
-var validationTest = function(test){
+var validationTest = function(test, kb){
   const indent = '     '
   var forwardTree = function (x) {
     var sts = []
@@ -285,7 +88,7 @@ var validationTest = function(test){
 registerTest(sht('Validate'), validationTest)
 
 // Returns promise of issues array
-var doAppropriateTest = function (test){
+var doAppropriateTest = function (test, kb){
   return new Promise(function(resolve, reject){
     console.log('  -- Do approp test for ' + test)
     var testDoc
@@ -305,7 +108,7 @@ var doAppropriateTest = function (test){
       for (let j=0; j<klasses.length; j++){
         let handler = testHandlers[klasses[j].uri]
         if (handler){
-          handler(test).then(function (issues) {
+          handler(test, kb).then(function (issues) {
             resolve(issues)
           })
           break
@@ -325,6 +128,9 @@ var doAppropriateTest = function (test){
 // See https://www.w3.org/TR/rdf11-testcases/
 // Returns a promise of set of issues
 var runTests = function (doc) {
+  var kb = $rdf.graph()
+  var fetcher = $rdf.fetcher(kb, {a:1})
+
   const indent = ''
   console.log("runTests " + doc)
   return new Promise(function(resolve, reject){
@@ -338,7 +144,7 @@ var runTests = function (doc) {
       if (testList) {
         testList = testList.elements
         console.log("Entries " + testList.length)
-        promises = testList.map(doAppropriateTest)
+        promises = testList.map(test => doAppropriateTest(test, kb))
       }
       let includes = kb.each(doc, mf('include'))
       console.log(indent + ' includes: ' + includes.length + ' for ' + doc )
@@ -362,7 +168,7 @@ var runTests = function (doc) {
 //  Caution: use with care!  This will build a complete linked data
 // database of linked files from master data
 
-var spray = function (rootURI, original, doubleLinked) {
+var spray = function (rootURI, original, exitMessage, kb, finished) {
   var docs = []
   console.log('Spray: Stripping ' + rootURI + ' from ' + original.value)
   var docURI
@@ -381,7 +187,9 @@ var spray = function (rootURI, original, doubleLinked) {
   }
   kb.statements.forEach(function (st) { check(st.subject); check(st.object) }) // Not predicates
 
+  var waitingFor = 0
   for (docURI in docs) {
+    ++waitingFor
     var sts = []
     console.log('Document: ' + docURI)
     for (var uri in docs[docURI]) {
@@ -406,6 +214,9 @@ var spray = function (rootURI, original, doubleLinked) {
           exitMessage("***** Error writing file <" + f + "> :" + err)
         }
         console.log("Written ok: " + f)
+        if (--waitingFor === 0) {
+          finished()
+        }
       })
     }
 
@@ -418,7 +229,7 @@ var spray = function (rootURI, original, doubleLinked) {
 //
 //   Contains namespace-trigged specials for  IANA registry data
 //
-var readXML = function (targetDocument, options, callback) {
+var readXML = function (targetDocument, options, callback, kb) {
   var uri = targetDocument.uri
   var file = $rdf.Util.uri.refTo(base, uri)
   var ignore = { 7: true }
@@ -685,6 +496,11 @@ var readXML = function (targetDocument, options, callback) {
   })
 }
 
-doNext(process.argv.slice(2))
-
 // ends
+
+module.exports = {
+  check: check,
+  spray: spray,
+  readXML: readXML,
+}
+
