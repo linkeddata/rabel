@@ -46,7 +46,7 @@ rabel part*.ttl -out=whole.ttl
 ## Details
 Currently rabel can read from the web or files, and write only to files.  Filenames are deemed to be relative URIs just taken relative to file:///{pwd}/ where {pwd} is the  current working directory.
 
-One use case is testing the all the parsers. Another is providing a stable serialization. The output serialization is designed to be stable under small changes of the the data, to allow data files to be checked into source code control systems.
+One use case is testing all the parsers. Another is providing a stable serialization. The output serialization is designed to be stable under small changes of the the data, to allow data files to be checked into source code control systems.
 
 The name comes from RDF and Babel.
 
