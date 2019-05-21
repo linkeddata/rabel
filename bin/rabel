@@ -1,8 +1,8 @@
-#!/usr/bin/env node
+//  #!/usr/bin/env node
 
 'use strict';
 
-/**
+/**  COMMAND LINE  TOOL FOR LINKED DATA:  rabel
  */
 
 let path = require('path')
@@ -256,4 +256,3 @@ try {
   console.error('stack' in e ? e.stack : e)
   process.exit(4)
 }
-
