@@ -1,3 +1,5 @@
+/* TEST the rabel utility
+*/
 let fetch = require('node-fetch')
 let assert = require('assert')
 let path = require('path')
@@ -16,6 +18,7 @@ package.json:
   },
 */
 
+// rabel -test=../../w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/manifest.ttl"
 xdescribe('fetch', () => {
   [
     // These will pass.
@@ -67,7 +70,7 @@ describe('rabel', () => {
       let filePath = path.join(__dirname, t.file)
       it('should load and spray ' + filePath, done => {
         let kb = $rdf.graph()
-        let fetcher = $rdf.fetcher(kb, {a:1})
+        let fetcher = $rdf.fetcher(kb, {a: 1})
         let doc = kb.sym('file://' + filePath)
         try {
           fs.removeSync(TARGET_DIR)

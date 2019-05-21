@@ -9,6 +9,7 @@ var $rdf = require('rdflib')
 var fs = require('fs')
 var ensurePath = require('fs-extra').ensureDirSync
 var path = require('path')
+const ShapeChecker = require('shacl-check')
 // var ShapeChecker = require('./../shacl-check/src/shacl-check.js')
 
 const RDF = $rdf.Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
@@ -16,9 +17,8 @@ const a = RDF('type')
 const mf = $rdf.Namespace('http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#')
 const sht = $rdf.Namespace('http://www.w3.org/ns/shacl/test-suite#')
 
-
 var testHandlers = []
-var registerTest = function(klass, handler){
+var registerTest = function (klass, handler) {
   testHandlers[klass.uri || klass] = handler
 }
 
@@ -38,7 +38,8 @@ var statementsToTurtle = function (kb, statements, base) {
 }
 
 // Returns a promise of an issues list
-var validationTest = function(test, kb){
+var validationTest = function (test, kb) {
+  var actualGraph, expected, shapesGraph, action, dataGraph
   const indent = '     '
   var forwardTree = function (x) {
     var sts = []
@@ -56,17 +57,17 @@ var validationTest = function(test, kb){
   }
   console.log(indent + 'Validation test ' + test)
   action = kb.the(test, mf('action'))
-  if (!action) throw new Error("Need action")
+  if (!action) throw new Error('Need action')
   dataGraph = kb.the(action, sht('dataGraph'))
   shapesGraph = kb.the(action, sht('shapesGraph')) // A doc
   actualGraph = kb.sym(test.uri + '__results')
-  if (!dataGraph || !shapesGraph || !actualGraph) throw new Error("Need all params")
+  if (!dataGraph || !shapesGraph || !actualGraph) throw new Error('Need all params')
   let opts = { noResultMessage: true } // must be excludded from tests
   ;(new ShapeChecker(kb, shapesGraph, dataGraph, actualGraph, opts)).execute()
 
   expected = kb.the(test, mf('result')) // Node
   var expectedDoc = kb.statementsMatching(expected)[0].graph // whare is that data anyway?
-  var base  = expected.doc? expected.doc().uri : dataGraph.uri
+  // var base = expected.doc ? expected.doc().uri : dataGraph.uri
   let expectedStatements = forwardTree(expected)
   console.log(indent + 'Expected statements: ' + expectedStatements.length)
   let expectedString = statementsToTurtle(kb, expectedStatements, expectedDoc.uri)
@@ -80,19 +81,23 @@ var validationTest = function(test, kb){
     console.log(indent + '    -> FAILED, expected:')
     let ul = '\n__________________________________________________\n'
     console.log(ul + expectedString + ul + actualString + ul)
-    issues.push({ test, expectedString, actualString, // generic
-       dataGraph, shapesGraph, actualGraph}) // test type specific
+    issues.push({ test,
+      expectedString,
+      actualString, // generic
+      dataGraph,
+      shapesGraph,
+      actualGraph}) // test type specific
   }
   return Promise.resolve(issues)
 }
 registerTest(sht('Validate'), validationTest)
 
 // Returns promise of issues array
-var doAppropriateTest = function (test, kb){
-  return new Promise(function(resolve, reject){
+var doAppropriateTest = function (test, kb) {
+  return new Promise(function (resolve, reject) {
     console.log('  -- Do approp test for ' + test)
     var testDoc
-    if (test.uri.includes('#')){
+    if (test.uri.includes('#')) {
       testDoc = test.doc()
     } else {
       if (test.uri.endsWith('.ttl')) {
@@ -101,13 +106,12 @@ var doAppropriateTest = function (test, kb){
         testDoc = kb.sym(test.uri + '.ttl') /// needed for shacl tests in file space
       }
     }
-    console.log( "loading... " + testDoc)
-    fetcher.load(testDoc).then(function (xhr) {
+    console.log('loading... ' + testDoc)
+    kb.fetcher.load(testDoc).then(function (xhr) {
       var klasses = kb.each(test, a)
-      var ppp = []
-      for (let j=0; j<klasses.length; j++){
+      for (let j = 0; j < klasses.length; j++) {
         let handler = testHandlers[klasses[j].uri]
-        if (handler){
+        if (handler) {
           handler(test, kb).then(function (issues) {
             resolve(issues)
           })
@@ -117,7 +121,7 @@ var doAppropriateTest = function (test, kb){
       }
     })
     .catch(function (e) {
-      const message = "Error in doAppropriateTest loading " + testDoc + ': ' + e
+      const message = 'Error in doAppropriateTest loading ' + testDoc + ': ' + e
       console.log(message)
       console.log('stack: ' + e.stack.toString())
       reject(new Error(message))
@@ -129,32 +133,30 @@ var doAppropriateTest = function (test, kb){
 // Returns a promise of set of issues
 var runTests = function (doc) {
   var kb = $rdf.graph()
-  var fetcher = $rdf.fetcher(kb, {a:1})
-
+  // var fetcher = $rdf.fetcher(kb, {a: 1})
   const indent = ''
-  console.log("runTests " + doc)
-  return new Promise(function(resolve, reject){
+  console.log('runTests ' + doc)
+  return new Promise(function (resolve, reject) {
     kb.fetcher.load(doc).then(function (xhr) {
       console.log(indent + 'Manifest loaded: ' + doc)
       let comment = kb.anyValue(doc, kb.sym('http://www.w3.org/2000/01/rdf-schema#comment'))
       if (comment) console.log(indent + comment)
-      var action, dataGraph, shapesGraph, expected, actualGraph
       var testList = kb.any(doc, mf('entries'))
       let promises = []
       if (testList) {
         testList = testList.elements
-        console.log("Entries " + testList.length)
+        console.log('Entries ' + testList.length)
         promises = testList.map(test => doAppropriateTest(test, kb))
       }
       let includes = kb.each(doc, mf('include'))
-      console.log(indent + ' includes: ' + includes.length + ' for ' + doc )
+      console.log(indent + ' includes: ' + includes.length + ' for ' + doc)
       promises = promises.concat(includes.map(runTests))
-      Promise.all(promises).then(function(issues){
-        console.log('Done with ' + doc + ': ' + issues ? issues.length : "ISSUES ERROR @@@")
+      Promise.all(promises).then(function (issues) {
+        console.log('Done with ' + doc + ': ' + issues ? issues.length : 'ISSUES ERROR @@@')
         resolve(issues) // @@ mayeb have to concat subarrays
       })
       .catch(function (e) {
-        const message = "ERROR in runTests loading " + doc + ': ' + e
+        const message = 'ERROR in runTests loading ' + doc + ': ' + e
         console.log(message)
         console.log('stack: ' + e.strack.toString())
         reject(new Error(message))
@@ -201,19 +203,19 @@ var spray = function (rootURI, original, exitMessage, kb, finished) {
       sts = sts.concat(connected)
     }
     console.log('We have ' + sts.length + ' total statements in document ' + docURI)
-    var fileName = docURI.slice(7)  + '.ttl'
+    var fileName = docURI.slice(7) + '.ttl'
     var out = statementsToTurtle(kb, sts, docURI)
 
     console.log('To be written to ' + fileName + ':\n' + out + '\n')
 
-    var foo = function (fileName, out){
+    var foo = function (fileName, out) {
       var f = fileName
       ensurePath(path.dirname(f))
       fs.writeFile(f, out, function (err) {
         if (err) {
-          exitMessage("***** Error writing file <" + f + "> :" + err)
+          exitMessage('***** Error writing file <' + f + '> :' + err)
         }
-        console.log("Written ok: " + f)
+        console.log('Written ok: ' + f)
         if (--waitingFor === 0) {
           finished()
         }
@@ -221,7 +223,6 @@ var spray = function (rootURI, original, exitMessage, kb, finished) {
     }
 
     foo(fileName, out)
-
   }
 }
 
@@ -229,16 +230,17 @@ var spray = function (rootURI, original, exitMessage, kb, finished) {
 //
 //   Contains namespace-trigged specials for  IANA registry data
 //
-var readXML = function (targetDocument, options, callback, kb) {
-  var uri = targetDocument.uri
-  var file = $rdf.Util.uri.refTo(base, uri)
+var readXML = function (targetDocument, options, callbackFunction, kb) {
+  const uri = targetDocument.uri
+  const base = 'file:///'
+  const file = $rdf.Util.uri.refTo(base, uri)
   var ignore = { 7: true }
 
   fs.readFile(file, options.encoding || 'utf8', function (err, data) {
     var defaultNamespace = null
     if (err) {
       console.log('File read FAIL, error: ' + err)
-      return callback(false, err)
+      return callbackFunction(false, err)
     }
     console.log('File read ok, length: ' + data.length)
     var local = $rdf.uri.join(file, base) + '#'
@@ -274,15 +276,15 @@ var readXML = function (targetDocument, options, callback, kb) {
       return text
     }
 
-    var randomNamedNode = function(){
+    var randomNamedNode = function () {
       return kb.sym(root.uri + '#n' + (nextId++))
     }
 
     // ///////////////////////// GPX SPECIAL
 
-    var GPX_predicateMap = {
+    var predicateMapForGPX = {
       time: { uri: 'http://www.w3.org/2003/01/geo/wgs84_pos#time',
-      type: 'http://www.w3.org/2001/XMLSchema#dateTime' },
+        type: 'http://www.w3.org/2001/XMLSchema#dateTime' },
 
       lat: { uri: 'http://www.w3.org/2003/01/geo/wgs84_pos#lat' },
       lon: { uri: 'http://www.w3.org/2003/01/geo/wgs84_pos#long' },
@@ -291,11 +293,11 @@ var readXML = function (targetDocument, options, callback, kb) {
 
     // ///////////////////////// IANA SPECIAL
 
-    var IANA_predicateMap = {
+    var predicateMapForIANA = {
       created: { uri: 'http://purl.org/dc/terms/created',
-          type: 'http://www.w3.org/2001/XMLSchema#date' }, // @@CHECK
+        type: 'http://www.w3.org/2001/XMLSchema#date' }, // @@CHECK
       date: { uri: 'http://purl.org/dc/terms/date',
-          type: 'http://www.w3.org/2001/XMLSchema#date' }, // @@CHECK
+        type: 'http://www.w3.org/2001/XMLSchema#date' }, // @@CHECK
       description: { uri: 'http://purl.org/dc/terms/description' }, // @@CHECK
       title: { uri: 'http://purl.org/dc/terms/title' },
       value: { uri: 'http://www.w3.org/2000/01/rdf-schema#label' },
@@ -372,7 +374,7 @@ var readXML = function (targetDocument, options, callback, kb) {
       // console.log('@@ 3 magicIANAsubject tag: ' + ele.tagName + ' parent: ' + parent.tagName )
       if (ele.tagName === 'record' && parent.tagName === 'registry') {
         for (let i = 0; i < ch.length; i++) {
-          var child = ch[i]
+          let child = ch[i]
           if (child.nodeName === 'name') {
             return kb.sym($rdf.uri.join(parent.getAttribute('id') + '/' + child.textContent, local) + '#Resource')
           }
@@ -419,11 +421,11 @@ var readXML = function (targetDocument, options, callback, kb) {
             if (defaultNamespace === 'http://www.iana.org/assignments') {
               options.iana = true
               ns = 'https://www.w3.org/ns/assignments/reg#'
-              options.predicateMap = IANA_predicateMap
+              options.predicateMap = predicateMapForIANA
               console.log('IANA MODE')
             } else if (defaultNamespace === 'http://www.topografix.com/GPX/1/1') {
               ns = 'http://hackdiary.com/ns/gps#' // @@@ u
-              options.predicateMap = GPX_predicateMap
+              options.predicateMap = predicateMapForGPX
               console.log('GPX Mode')
             }
             continue
@@ -462,12 +464,12 @@ var readXML = function (targetDocument, options, callback, kb) {
               if (child.attributes && child.getAttribute('id')) {
                 if (options.iana && child.nodeName === 'person') {
                   let who = child.getAttribute('id')
-                  if (!who) throw new Error("Person has no ID")
+                  if (!who) throw new Error('Person has no ID')
                   obj = kb.sym($rdf.uri.join('../person/', local) + who + '#')
                   console.log(indent + 'Person is ' + obj)
                 } else {
                   let who = child.getAttribute('id')
-                  if (!who) throw new Error("Thing has no ID")
+                  if (!who) throw new Error('Thing has no ID')
                   obj = kb.sym(local + child.getAttribute('id'))
                   console.log(indent + 'Local thing is ' + obj)
                 }
@@ -476,7 +478,7 @@ var readXML = function (targetDocument, options, callback, kb) {
                 console.log(indent + 'Magic IANA URI ' + obj)
               // kb.add(obj, RDF('type'), RDF('Property') , targetDocument)
               } else {
-                if (options.iana && child.nodeName === 'uri'){
+                if (options.iana && child.nodeName === 'uri') {
                   obj = kb.sym(justTextContent(child))
                 } else if (options.iana && child.nodeName === 'people') {
                   obj = randomNamedNode()
@@ -492,7 +494,7 @@ var readXML = function (targetDocument, options, callback, kb) {
       }
     }
     convert(doc, root)
-    callback(true)
+    callbackFunction(true)
   })
 }
 
@@ -501,6 +503,5 @@ var readXML = function (targetDocument, options, callback, kb) {
 module.exports = {
   check: check,
   spray: spray,
-  readXML: readXML,
+  readXML: readXML
 }
-
