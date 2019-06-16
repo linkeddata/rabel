@@ -1,0 +1,13 @@
+@prefix fhir: <../>.
+@prefix Pr: <./>.
+@prefix Obs: <../Observation/>.
+
+   Pr:example a fhir:Practitioner .
+Obs:blood-pressure
+    fhir:Observation-performer
+            [ fhir:Reference-reference
+               [ fhir:value "Practitioner/example" ];
+            fhir:index
+               0;
+            fhir:link
+               Pr:example ].

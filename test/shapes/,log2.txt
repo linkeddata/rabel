@@ -1,0 +1,2346 @@
+Loading <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/manifest.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/manifest.ttl>
+SHACL Test suite
+ includes: 1 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/manifest.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/manifest.ttl>
+ includes: 3 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/manifest.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/manifest.ttl>
+ includes: 5 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/complex/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/target/manifest.ttl>
+Masked error - status 0 for file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/target/manifest.ttl
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/manifest.ttl>
+ includes: 2 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-002.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/manifest.ttl>
+ includes: 5 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/derived/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/function/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/node/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/property/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/target/manifest.ttl>
+Masked error - status 0 for file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/target/manifest.ttl
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/complex/manifest.ttl>
+ includes: 1 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/complex/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/complex/personexample.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/manifest.ttl>
+ includes: 3 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-duplicate-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-inverse-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-predicate-hasValue-001.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/manifest.ttl>
+ includes: 36 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/and-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/class-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-002.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-003.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/disjoint-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/equals-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/hasValue-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/in-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/languageIn-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-002.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThanOrEquals-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-002.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxExclusive-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxInclusive-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxLength-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-002.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-002.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minLength-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-002.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/nodeKind-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/not-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/or-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/or-datatypes-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/pattern-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/pattern-002.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/property-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/qualifiedMinCountDisjoint-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/qualifiedValueShape-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/qualifiedValueShapesDisjoint-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/uniqueLang-001.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/manifest.ttl>
+ includes: 16 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/and-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/and-002.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/closed-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/closed-002.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/datatype-invalid-literal-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/disjoint-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/equals-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/hasValue-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/in-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/languageIn-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/minInclusive-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/node-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/not-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/not-002.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/or-001.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/node/xone-001.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-001>
+Target class <http://datashapes.org/sh/tests/shapedefs/anon-shape-001.test#Person>
+Target class member <http://datashapes.org/sh/tests/shapedefs/anon-shape-001.test#InvalidNode1>
+ Applying shape _:n164
+        to node <http://datashapes.org/sh/tests/shapedefs/anon-shape-001.test#InvalidNode1>
+  closed: false
+  Checking property _:n165: <http://datashapes.org/sh/tests/shapedefs/anon-shape-001.test#property>
+  -> Too few (0) <http://datashapes.org/sh/tests/shapedefs/anon-shape-001.test#property> on <http://datashapes.org/sh/tests/shapedefs/anon-shape-001.test#InvalidNode1>
+Target class member <http://datashapes.org/sh/tests/shapedefs/anon-shape-001.test#ValidNode1>
+ Applying shape _:n164
+        to node <http://datashapes.org/sh/tests/shapedefs/anon-shape-001.test#ValidNode1>
+  closed: false
+  Checking property _:n165: <http://datashapes.org/sh/tests/shapedefs/anon-shape-001.test#property>
+     Expected statements: 9
+     Actual statements: 9
+           Match -> passed
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/property/manifest.ttl>
+ includes: 1 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/property/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/property/LanguageExamplePropertyShape.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/derived/manifest.ttl>
+ includes: 1 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/derived/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/derived/derivedValues-001.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-002.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-002>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-002.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-002.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/shapedefs/anon-shape-002>
+Target node <http://datashapes.org/sh/tests/shapedefs/anon-shape-002.test#InvalidNode1>
+ Applying shape _:n180
+        to node <http://datashapes.org/sh/tests/shapedefs/anon-shape-002.test#InvalidNode1>
+  closed: false
+  Checking property _:n181: <http://datashapes.org/sh/tests/shapedefs/anon-shape-002.test#property>
+  -> Too few (0) <http://datashapes.org/sh/tests/shapedefs/anon-shape-002.test#property> on <http://datashapes.org/sh/tests/shapedefs/anon-shape-002.test#InvalidNode1>
+Target node <http://datashapes.org/sh/tests/shapedefs/anon-shape-002.test#ValidNode1>
+ Applying shape _:n180
+        to node <http://datashapes.org/sh/tests/shapedefs/anon-shape-002.test#ValidNode1>
+  closed: false
+  Checking property _:n181: <http://datashapes.org/sh/tests/shapedefs/anon-shape-002.test#property>
+     Expected statements: 9
+     Actual statements: 9
+           Match -> passed
+1
+2
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/function/manifest.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/function/manifest.ttl>
+0
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/node/manifest.ttl>
+ includes: 1 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/node/manifest.ttl>
+runTests <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/sparql/node/sparql-001.ttl>
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/complex/personexample.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/complex/personexample>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/complex/personexample.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/complex/personexample.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/complex/personexample>
+Target class <http://datashapes.org/sh/tests/core/complex/personexample.test#Person>
+Target class member <http://datashapes.org/sh/tests/core/complex/personexample.test#Alice>
+ Applying shape <http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/complex/personexample.test#Alice>
+  closed: true
+      Ignoreable: <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+  Checking property _:n190: <http://datashapes.org/sh/tests/core/complex/personexample.test#ssn>
+  -> Error 987-65-432A should match pattern  ^\d{3}-\d{2}-\d{4}$
+  Checking property _:n191: <http://datashapes.org/sh/tests/core/complex/personexample.test#worksFor>
+  Checking property _:n192: _:n193
+Target class member <http://datashapes.org/sh/tests/core/complex/personexample.test#Bob>
+ Applying shape <http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/complex/personexample.test#Bob>
+  closed: true
+      Ignoreable: <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+  Checking property _:n190: <http://datashapes.org/sh/tests/core/complex/personexample.test#ssn>
+  -> Too many (2) <http://datashapes.org/sh/tests/core/complex/personexample.test#ssn> on <http://datashapes.org/sh/tests/core/complex/personexample.test#Bob>
+  Checking property _:n191: <http://datashapes.org/sh/tests/core/complex/personexample.test#worksFor>
+  Checking property _:n192: _:n193
+Target class member <http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin>
+ Applying shape <http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin>
+  closed: true
+      Ignoreable: <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+  Checking property _:n190: <http://datashapes.org/sh/tests/core/complex/personexample.test#ssn>
+  Checking property _:n191: <http://datashapes.org/sh/tests/core/complex/personexample.test#worksFor>
+  -> Error <http://datashapes.org/sh/tests/core/complex/personexample.test#UntypedCompany> should be in class <http://datashapes.org/sh/tests/core/complex/personexample.test#Company>
+  Checking property _:n192: _:n193
+  -> Closed node has extra data: <http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin> <http://datashapes.org/sh/tests/core/complex/personexample.test#birthDate> "1999-09-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+     Expected statements: 33
+     Actual statements: 31
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix per: <http://datashapes.org/sh/tests/core/complex/personexample.test#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Alice;
+                sh:resultPath per:ssn;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:PatternConstraintComponent;
+                sh:sourceShape [];
+                sh:value "987-65-432A"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Bob;
+                sh:resultPath per:ssn;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
+                sh:sourceShape []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Calvin;
+                sh:resultPath per:birthDate;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClosedConstraintComponent;
+                sh:sourceShape per:PersonShape;
+                sh:value "1999-09-09"^^XML:date
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Calvin;
+                sh:resultPath per:worksFor;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClassConstraintComponent;
+                sh:sourceShape [];
+                sh:value per:UntypedCompany
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix per: <http://datashapes.org/sh/tests/core/complex/personexample.test#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Alice;
+                sh:resultPath per:ssn;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:PatternConstraintComponent;
+                sh:sourceShape per:PersonShape;
+                sh:value "987-65-432A"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Bob;
+                sh:resultPath per:ssn;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
+                sh:sourceShape per:PersonShape
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Calvin;
+                sh:resultPath per:worksFor;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClassConstraintComponent;
+                sh:sourceShape per:PersonShape
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode per:Calvin;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClosedConstraintComponent;
+                sh:sourceShape per:PersonShape;
+                sh:value "1999-09-09"^^XML:date
+            ]
+].
+
+__________________________________________________
+
+1
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-duplicate-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-duplicate-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-duplicate-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-duplicate-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-duplicate-001>
+Target node <http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#A>
+ Applying shape <http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#S>
+        to node <http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#A>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#SP>: (<http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#p1> <http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#p2>)
+  -> Too many (2) (<http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#p1> <http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#p2>) on <http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#A>
+  -> Error value should be of node kind:  <http://www.w3.org/ns/shacl#IRI>
+  -> Error value should be of node kind:  <http://www.w3.org/ns/shacl#IRI>
+     Expected statements: 10
+     Actual statements: 25
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix p: <http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode p:A;
+                sh:resultPath ( p:p1 p:p2 );
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:NodeKindConstraintComponent;
+                sh:sourceShape p:SP;
+                sh:value "value"
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix p: <http://datashapes.org/sh/tests/core/path/path-duplicate-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode p:A;
+                sh:resultPath ( p:p1 p:p2 );
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
+                sh:sourceShape p:S
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode p:A;
+                sh:resultPath ( p:p1 p:p2 );
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:NodeKindConstraintComponent;
+                sh:sourceShape p:S;
+                sh:value "value"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode p:A;
+                sh:resultPath ( p:p1 p:p2 );
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:NodeKindConstraintComponent;
+                sh:sourceShape p:S;
+                sh:value "value"
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-inverse-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-inverse-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-inverse-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-inverse-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-inverse-001>
+Target class <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#Person>
+Target class member <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P>: _:n222
+  -> Too few (1) _:n222 on <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1>
+Target class member <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P>: _:n222
+  -> Too many (3) _:n222 on <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2>
+Target class member <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#ValidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P>: _:n222
+     Expected statements: 18
+     Actual statements: 16
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix p: <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode p:InvalidResource1;
+                sh:resultPath [ sh:inversePath p:child ];
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+                sh:sourceShape p:TestShape-P
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode p:InvalidResource2;
+                sh:resultPath [ sh:inversePath p:child ];
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
+                sh:sourceShape p:TestShape-P
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix p: <http://datashapes.org/sh/tests/core/path/path-inverse-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode p:InvalidResource1;
+                sh:resultPath [];
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+                sh:sourceShape p:TestShape
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode p:InvalidResource2;
+                sh:resultPath [];
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
+                sh:sourceShape p:TestShape
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-predicate-hasValue-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-predicate-hasValue-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-predicate-hasValue-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-predicate-hasValue-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/path/path-predicate-hasValue-001>
+Target node <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#InvalidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#InvalidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#TestShape-P>: <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#property>
+Target node <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#InvalidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#InvalidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#TestShape-P>: <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#property>
+Target node <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#ValidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#TestShape-P>: <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#property>
+     Expected statements: 16
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix p: <http://datashapes.org/sh/tests/core/path/path-predicate-hasValue-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode p:InvalidResource1;
+                sh:resultPath p:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:HasValueConstraintComponent;
+                sh:sourceShape p:TestShape-P
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode p:InvalidResource2;
+                sh:resultPath p:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:HasValueConstraintComponent;
+                sh:sourceShape p:TestShape-P
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+3
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/and-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/and-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/and-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/and-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/and-001>
+Target node <http://datashapes.org/sh/tests/core/property/and-001.test#InvalidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/and-001.test#AddressShape>
+        to node <http://datashapes.org/sh/tests/core/property/and-001.test#InvalidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/and-001.test#AddressShape-address>: <http://datashapes.org/sh/tests/core/property/and-001.test#address>
+ Applying shape _:n241
+        to node _:n246
+  closed: false
+  Checking property _:n242: <http://datashapes.org/sh/tests/core/property/and-001.test#suburb>
+  -> Too few (0) <http://datashapes.org/sh/tests/core/property/and-001.test#suburb> on _:n246
+ Applying shape _:n243
+        to node _:n246
+  closed: false
+  Checking property _:n244: <http://datashapes.org/sh/tests/core/property/and-001.test#postalCode>
+  -> Too few (0) <http://datashapes.org/sh/tests/core/property/and-001.test#postalCode> on _:n246
+  -> Error _:n246 does not match ALL shapes  (_:n241 _:n243)
+Target node <http://datashapes.org/sh/tests/core/property/and-001.test#InvalidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/and-001.test#AddressShape>
+        to node <http://datashapes.org/sh/tests/core/property/and-001.test#InvalidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/and-001.test#AddressShape-address>: <http://datashapes.org/sh/tests/core/property/and-001.test#address>
+ Applying shape _:n241
+        to node _:n247
+  closed: false
+  Checking property _:n242: <http://datashapes.org/sh/tests/core/property/and-001.test#suburb>
+  -> Too few (0) <http://datashapes.org/sh/tests/core/property/and-001.test#suburb> on _:n247
+ Applying shape _:n243
+        to node _:n247
+  closed: false
+  Checking property _:n244: <http://datashapes.org/sh/tests/core/property/and-001.test#postalCode>
+  -> Too few (0) <http://datashapes.org/sh/tests/core/property/and-001.test#postalCode> on _:n247
+  -> Error _:n247 does not match ALL shapes  (_:n241 _:n243)
+Target node <http://datashapes.org/sh/tests/core/property/and-001.test#InvalidResource3>
+ Applying shape <http://datashapes.org/sh/tests/core/property/and-001.test#AddressShape>
+        to node <http://datashapes.org/sh/tests/core/property/and-001.test#InvalidResource3>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/and-001.test#AddressShape-address>: <http://datashapes.org/sh/tests/core/property/and-001.test#address>
+ Applying shape _:n241
+        to node _:n248
+  closed: false
+  Checking property _:n242: <http://datashapes.org/sh/tests/core/property/and-001.test#suburb>
+  -> Too few (0) <http://datashapes.org/sh/tests/core/property/and-001.test#suburb> on _:n248
+ Applying shape _:n243
+        to node _:n248
+  closed: false
+  Checking property _:n244: <http://datashapes.org/sh/tests/core/property/and-001.test#postalCode>
+  -> Too few (0) <http://datashapes.org/sh/tests/core/property/and-001.test#postalCode> on _:n248
+  -> Error _:n248 does not match ALL shapes  (_:n241 _:n243)
+Target node <http://datashapes.org/sh/tests/core/property/and-001.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/and-001.test#AddressShape>
+        to node <http://datashapes.org/sh/tests/core/property/and-001.test#ValidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/and-001.test#AddressShape-address>: <http://datashapes.org/sh/tests/core/property/and-001.test#address>
+ Applying shape _:n241
+        to node _:n249
+  closed: false
+  Checking property _:n242: <http://datashapes.org/sh/tests/core/property/and-001.test#suburb>
+ Applying shape _:n243
+        to node _:n249
+  closed: false
+  Checking property _:n244: <http://datashapes.org/sh/tests/core/property/and-001.test#postalCode>
+     Expected statements: 26
+     Actual statements: 68
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix n0: <http://datashapes.org/sh/tests/core/property/and-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode n0:InvalidResource1;
+                sh:resultPath n0:address;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:AndConstraintComponent;
+                sh:sourceShape n0:AddressShape-address;
+                sh:value []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode n0:InvalidResource2;
+                sh:resultPath n0:address;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:AndConstraintComponent;
+                sh:sourceShape n0:AddressShape-address;
+                sh:value []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode n0:InvalidResource3;
+                sh:resultPath n0:address;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:AndConstraintComponent;
+                sh:sourceShape n0:AddressShape-address;
+                sh:value []
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix n0: <http://datashapes.org/sh/tests/core/property/and-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode n0:InvalidResource1;
+                sh:resultPath n0:address;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:AndConstraintComponent;
+                sh:sourceShape n0:AddressShape;
+                sh:value []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode n0:InvalidResource2;
+                sh:resultPath n0:address;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:AndConstraintComponent;
+                sh:sourceShape n0:AddressShape;
+                sh:value []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode n0:InvalidResource3;
+                sh:resultPath n0:address;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:AndConstraintComponent;
+                sh:sourceShape n0:AddressShape;
+                sh:value []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode [];
+                sh:resultPath n0:postalCode;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+                sh:sourceShape []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode [];
+                sh:resultPath n0:postalCode;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+                sh:sourceShape []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode [];
+                sh:resultPath n0:postalCode;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+                sh:sourceShape []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode [];
+                sh:resultPath n0:suburb;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+                sh:sourceShape []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode [];
+                sh:resultPath n0:suburb;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+                sh:sourceShape []
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode [];
+                sh:resultPath n0:suburb;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+                sh:sourceShape []
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/class-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/class-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/class-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/class-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/class-001>
+Target node <http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/class-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty>: <http://datashapes.org/sh/tests/core/property/class-001.test#testProperty>
+  -> Error <http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1> should be in class <http://datashapes.org/sh/tests/core/property/class-001.test#SuperClass>
+  -> Error A string should be in class <http://datashapes.org/sh/tests/core/property/class-001.test#SuperClass>
+Target node <http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/class-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty>: <http://datashapes.org/sh/tests/core/property/class-001.test#testProperty>
+  -> Error <http://datashapes.org/sh/tests/core/property/class-001.test#SubClassInstance> should be in class <http://datashapes.org/sh/tests/core/property/class-001.test#SuperClass>
+Target node <http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/class-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty>: <http://datashapes.org/sh/tests/core/property/class-001.test#testProperty>
+  -> Error _:n267 should be in class <http://datashapes.org/sh/tests/core/property/class-001.test#SuperClass>
+     Expected statements: 18
+     Actual statements: 30
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix cl: <http://datashapes.org/sh/tests/core/property/class-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode cl:InvalidResource1;
+                sh:resultPath cl:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClassConstraintComponent;
+                sh:sourceShape cl:TestShape-testProperty;
+                sh:value cl:InvalidResource1
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode cl:InvalidResource1;
+                sh:resultPath cl:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClassConstraintComponent;
+                sh:sourceShape cl:TestShape-testProperty;
+                sh:value "A string"
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix cl: <http://datashapes.org/sh/tests/core/property/class-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode cl:InvalidResource1;
+                sh:resultPath cl:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClassConstraintComponent;
+                sh:sourceShape cl:TestShape
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode cl:InvalidResource1;
+                sh:resultPath cl:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClassConstraintComponent;
+                sh:sourceShape cl:TestShape
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode cl:ValidResource1;
+                sh:resultPath cl:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClassConstraintComponent;
+                sh:sourceShape cl:TestShape
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode cl:ValidResource2;
+                sh:resultPath cl:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:ClassConstraintComponent;
+                sh:sourceShape cl:TestShape
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-001>
+     Expected statements: 18
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix d: <http://datashapes.org/sh/tests/core/property/datatype-001.test#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode d:InvalidResource1;
+                sh:resultPath d:dateProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:DatatypeConstraintComponent;
+                sh:sourceShape d:TestShape-dateProperty;
+                sh:value "2011-01-01"^^XML:dateTime
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode d:InvalidResource1;
+                sh:resultPath d:integerProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:DatatypeConstraintComponent;
+                sh:sourceShape d:TestShape-integerProperty;
+                sh:value 11.1
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-003.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-003>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-003.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-003.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-003>
+Target node <http://datashapes.org/sh/tests/core/property/datatype-003.test#InvalidInstance1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/datatype-003.test#InvalidInstance1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value>: <http://datashapes.org/sh/tests/core/property/datatype-003.test#value>
+ Applying shape _:n287
+        to node 42
+  closed: false
+ Applying shape _:n288
+        to node 42
+  closed: false
+Target node <http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value>: <http://datashapes.org/sh/tests/core/property/datatype-003.test#value>
+ Applying shape _:n287
+        to node A
+  closed: false
+ Applying shape _:n288
+        to node A
+  closed: false
+Target node <http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value>: <http://datashapes.org/sh/tests/core/property/datatype-003.test#value>
+ Applying shape _:n287
+        to node A
+  closed: false
+ Applying shape _:n288
+        to node A
+  closed: false
+Target node <http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance3>
+ Applying shape <http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance3>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value>: <http://datashapes.org/sh/tests/core/property/datatype-003.test#value>
+ Applying shape _:n287
+        to node A
+  closed: false
+ Applying shape _:n288
+        to node A
+  closed: false
+     Expected statements: 10
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix d: <http://datashapes.org/sh/tests/core/property/datatype-003.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode d:InvalidInstance1;
+                sh:resultPath d:value;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:OrConstraintComponent;
+                sh:sourceShape d:TestShape-value;
+                sh:value 42
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-002.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-002>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-002.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-002.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/datatype-002>
+Target node <http://datashapes.org/sh/tests/core/property/datatype-002.test#InvalidInstance1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/datatype-002.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/datatype-002.test#InvalidInstance1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/datatype-002.test#TestShape-value>: <http://datashapes.org/sh/tests/core/property/datatype-002.test#value>
+  -> Error A should be datatype  <http://www.w3.org/2001/XMLSchema#string>
+Target node <http://datashapes.org/sh/tests/core/property/datatype-002.test#InvalidInstance2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/datatype-002.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/datatype-002.test#InvalidInstance2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/datatype-002.test#TestShape-value>: <http://datashapes.org/sh/tests/core/property/datatype-002.test#value>
+  -> Error 42 should be datatype  <http://www.w3.org/2001/XMLSchema#string>
+Target node <http://datashapes.org/sh/tests/core/property/datatype-002.test#ValidInstance1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/datatype-002.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/datatype-002.test#ValidInstance1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/datatype-002.test#TestShape-value>: <http://datashapes.org/sh/tests/core/property/datatype-002.test#value>
+Target node <http://datashapes.org/sh/tests/core/property/datatype-002.test#ValidInstance2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/datatype-002.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/datatype-002.test#ValidInstance2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/datatype-002.test#TestShape-value>: <http://datashapes.org/sh/tests/core/property/datatype-002.test#value>
+     Expected statements: 18
+     Actual statements: 18
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix d: <http://datashapes.org/sh/tests/core/property/datatype-002.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode d:InvalidInstance1;
+                sh:resultPath d:value;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:DatatypeConstraintComponent;
+                sh:sourceShape d:TestShape-value;
+                sh:value "A"@en
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode d:InvalidInstance2;
+                sh:resultPath d:value;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:DatatypeConstraintComponent;
+                sh:sourceShape d:TestShape-value;
+                sh:value 42
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix d: <http://datashapes.org/sh/tests/core/property/datatype-002.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode d:InvalidInstance1;
+                sh:resultPath d:value;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:DatatypeConstraintComponent;
+                sh:sourceShape d:TestShape;
+                sh:value "A"@en
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode d:InvalidInstance2;
+                sh:resultPath d:value;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:DatatypeConstraintComponent;
+                sh:sourceShape d:TestShape;
+                sh:value 42
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/disjoint-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/disjoint-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/disjoint-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/disjoint-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/disjoint-001>
+Target node <http://datashapes.org/sh/tests/core/property/disjoint-001.test#InvalidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/disjoint-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/disjoint-001.test#InvalidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/disjoint-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/disjoint-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/disjoint-001.test#InvalidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/disjoint-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/disjoint-001.test#InvalidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/disjoint-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/disjoint-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/disjoint-001.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/disjoint-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/disjoint-001.test#ValidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/disjoint-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/disjoint-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/disjoint-001.test#ValidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/disjoint-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/disjoint-001.test#ValidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/disjoint-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/disjoint-001.test#property1>
+     Expected statements: 18
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix dis: <http://datashapes.org/sh/tests/core/property/disjoint-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode dis:InvalidResource1;
+                sh:resultPath dis:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:DisjointConstraintComponent;
+                sh:sourceShape dis:TestShape-property1;
+                sh:value "A"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode dis:InvalidResource2;
+                sh:resultPath dis:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:DisjointConstraintComponent;
+                sh:sourceShape dis:TestShape-property1;
+                sh:value "A"
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/equals-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/equals-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/equals-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/equals-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/equals-001>
+Target node <http://datashapes.org/sh/tests/core/property/equals-001.test#InvalidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/equals-001.test#InvalidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/equals-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/equals-001.test#InvalidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/equals-001.test#InvalidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/equals-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/equals-001.test#InvalidResource3>
+ Applying shape <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/equals-001.test#InvalidResource3>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/equals-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/equals-001.test#InvalidResource4>
+ Applying shape <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/equals-001.test#InvalidResource4>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/equals-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/equals-001.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/equals-001.test#ValidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/equals-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/equals-001.test#ValidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/equals-001.test#ValidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/equals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/equals-001.test#property1>
+     Expected statements: 42
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix equ: <http://datashapes.org/sh/tests/core/property/equals-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode equ:InvalidResource1;
+                sh:resultPath equ:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:EqualsConstraintComponent;
+                sh:sourceShape equ:TestShape-property1;
+                sh:value "A"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode equ:InvalidResource1;
+                sh:resultPath equ:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:EqualsConstraintComponent;
+                sh:sourceShape equ:TestShape-property1;
+                sh:value "B"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode equ:InvalidResource2;
+                sh:resultPath equ:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:EqualsConstraintComponent;
+                sh:sourceShape equ:TestShape-property1;
+                sh:value "A"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode equ:InvalidResource3;
+                sh:resultPath equ:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:EqualsConstraintComponent;
+                sh:sourceShape equ:TestShape-property1;
+                sh:value "A"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode equ:InvalidResource4;
+                sh:resultPath equ:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:EqualsConstraintComponent;
+                sh:sourceShape equ:TestShape-property1;
+                sh:value "B"
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/in-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/in-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/in-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/in-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/in-001>
+     Expected statements: 10
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix in: <http://datashapes.org/sh/tests/core/property/in-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode in:InvalidInstance1;
+                sh:resultPath in:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:InConstraintComponent;
+                sh:sourceShape in:ShapeClass-property;
+                sh:value "D"
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-001>
+Target node <http://datashapes.org/sh/tests/core/property/lessThan-001.test#InvalidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThan-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThan-001.test#InvalidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThan-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/lessThan-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/lessThan-001.test#InvalidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThan-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThan-001.test#InvalidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThan-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/lessThan-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/lessThan-001.test#InvalidResource3>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThan-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThan-001.test#InvalidResource3>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThan-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/lessThan-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/lessThan-001.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThan-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThan-001.test#ValidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThan-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/lessThan-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/lessThan-001.test#ValidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThan-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThan-001.test#ValidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThan-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/lessThan-001.test#property1>
+     Expected statements: 26
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix les: <http://datashapes.org/sh/tests/core/property/lessThan-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode les:InvalidResource1;
+                sh:resultPath les:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:LessThanConstraintComponent;
+                sh:sourceShape les:TestShape-property1;
+                sh:value 4
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode les:InvalidResource2;
+                sh:resultPath les:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:LessThanConstraintComponent;
+                sh:sourceShape les:TestShape-property1;
+                sh:value 6
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode les:InvalidResource3;
+                sh:resultPath les:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:LessThanConstraintComponent;
+                sh:sourceShape les:TestShape-property1;
+                sh:value 5
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/languageIn-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/languageIn-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/languageIn-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/languageIn-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/languageIn-001>
+Target node <http://datashapes.org/sh/tests/core/property/languageIn-001.test#Berg>
+ Applying shape <http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape>
+        to node <http://datashapes.org/sh/tests/core/property/languageIn-001.test#Berg>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel>: <http://datashapes.org/sh/tests/core/property/languageIn-001.test#prefLabel>
+Target node <http://datashapes.org/sh/tests/core/property/languageIn-001.test#Mountain>
+ Applying shape <http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape>
+        to node <http://datashapes.org/sh/tests/core/property/languageIn-001.test#Mountain>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel>: <http://datashapes.org/sh/tests/core/property/languageIn-001.test#prefLabel>
+     Expected statements: 26
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix l: <http://datashapes.org/sh/tests/core/property/languageIn-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode l:Berg;
+                sh:resultPath l:prefLabel;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:LanguageInConstraintComponent;
+                sh:sourceShape l:NewZealandLanguagesShape-prefLabel;
+                sh:value l:BergLabel
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode l:Berg;
+                sh:resultPath l:prefLabel;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:LanguageInConstraintComponent;
+                sh:sourceShape l:NewZealandLanguagesShape-prefLabel;
+                sh:value "Berg"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode l:Berg;
+                sh:resultPath l:prefLabel;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:LanguageInConstraintComponent;
+                sh:sourceShape l:NewZealandLanguagesShape-prefLabel;
+                sh:value "Berg"@de
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/hasValue-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/hasValue-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/hasValue-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/hasValue-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/hasValue-001>
+Target class <http://datashapes.org/sh/tests/core/property/hasValue-001.test#MalePerson>
+Target class member <http://datashapes.org/sh/tests/core/property/hasValue-001.test#InvalidMalePerson>
+ Applying shape <http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/hasValue-001.test#InvalidMalePerson>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender>: <http://datashapes.org/sh/tests/core/property/hasValue-001.test#gender>
+Target class member <http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender>: <http://datashapes.org/sh/tests/core/property/hasValue-001.test#gender>
+Target class member <http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender>: <http://datashapes.org/sh/tests/core/property/hasValue-001.test#gender>
+     Expected statements: 9
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix h: <http://datashapes.org/sh/tests/core/property/hasValue-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode h:InvalidMalePerson;
+                sh:resultPath h:gender;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:HasValueConstraintComponent;
+                sh:sourceShape h:PersonShape-gender
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-002.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-002>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-002.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-002.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThan-002>
+Target node <http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape-first>: <http://datashapes.org/sh/tests/core/property/lessThan-002.test#first>
+     Expected statements: 34
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix les: <http://datashapes.org/sh/tests/core/property/lessThan-002.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode les:InvalidInstance1;
+                sh:resultPath les:first;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:LessThanConstraintComponent;
+                sh:sourceShape les:TestShape-first;
+                sh:value 1
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode les:InvalidInstance1;
+                sh:resultPath les:first;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:LessThanConstraintComponent;
+                sh:sourceShape les:TestShape-first;
+                sh:value 1
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode les:InvalidInstance1;
+                sh:resultPath les:first;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:LessThanConstraintComponent;
+                sh:sourceShape les:TestShape-first;
+                sh:value 2
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode les:InvalidInstance1;
+                sh:resultPath les:first;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:LessThanConstraintComponent;
+                sh:sourceShape les:TestShape-first;
+                sh:value 2
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThanOrEquals-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThanOrEquals-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThanOrEquals-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThanOrEquals-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/lessThanOrEquals-001>
+Target node <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property1>
+Target node <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource3>
+ Applying shape <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource3>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1>: <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property1>
+     Expected statements: 18
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix les: <http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode les:InvalidResource1;
+                sh:resultPath les:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent
+                sh:LessThanOrEqualsConstraintComponent;
+                sh:sourceShape les:TestShape-property1;
+                sh:value 5
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode les:InvalidResource2;
+                sh:resultPath les:property1;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent
+                sh:LessThanOrEqualsConstraintComponent;
+                sh:sourceShape les:TestShape-property1;
+                sh:value 6
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-001>
+Target class <http://datashapes.org/sh/tests/core/property/maxCount-001.test#Person>
+Target class member <http://datashapes.org/sh/tests/core/property/maxCount-001.test#InvalidPerson>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxCount-001.test#InvalidPerson>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName>: <http://datashapes.org/sh/tests/core/property/maxCount-001.test#firstName>
+  -> Too many (2) <http://datashapes.org/sh/tests/core/property/maxCount-001.test#firstName> on <http://datashapes.org/sh/tests/core/property/maxCount-001.test#InvalidPerson>
+Target class member <http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName>: <http://datashapes.org/sh/tests/core/property/maxCount-001.test#firstName>
+Target node <http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName>: <http://datashapes.org/sh/tests/core/property/maxCount-001.test#firstName>
+     Expected statements: 9
+     Actual statements: 9
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix m: <http://datashapes.org/sh/tests/core/property/maxCount-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidPerson;
+                sh:resultPath m:firstName;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
+                sh:sourceShape m:PersonShape-firstName
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix m: <http://datashapes.org/sh/tests/core/property/maxCount-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidPerson;
+                sh:resultPath m:firstName;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
+                sh:sourceShape m:PersonShape
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-002.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-002>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-002.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-002.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxCount-002>
+Target node <http://datashapes.org/sh/tests/core/property/maxCount-002.test#InvalidResource>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxCount-002.test#InvalidResource>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape-versionInfo>: <http://www.w3.org/2002/07/owl#versionInfo>
+  -> Too many (1) <http://www.w3.org/2002/07/owl#versionInfo> on <http://datashapes.org/sh/tests/core/property/maxCount-002.test#InvalidResource>
+Target node <http://datashapes.org/sh/tests/core/property/maxCount-002.test#ValidResource>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxCount-002.test#ValidResource>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape-versionInfo>: <http://www.w3.org/2002/07/owl#versionInfo>
+     Expected statements: 9
+     Actual statements: 9
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix m: <http://datashapes.org/sh/tests/core/property/maxCount-002.test#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource;
+                sh:resultPath owl:versionInfo;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
+                sh:sourceShape m:TestShape-versionInfo
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix m: <http://datashapes.org/sh/tests/core/property/maxCount-002.test#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource;
+                sh:resultPath owl:versionInfo;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxCountConstraintComponent;
+                sh:sourceShape m:TestShape
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxExclusive-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxExclusive-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxExclusive-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxExclusive-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxExclusive-001>
+Target node <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#InvalidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#InvalidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#TestShape-property>: <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#property>
+  -> Error 1 should less than or equal to  1
+Target node <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#InvalidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#InvalidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#TestShape-property>: <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#property>
+  -> Error 2 should less than or equal to  1
+Target node <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#InvalidResource3>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#InvalidResource3>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#TestShape-property>: <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#property>
+  -> Error a should less than or equal to  1
+Target node <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#ValidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#TestShape-property>: <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#property>
+Target node <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#ValidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#ValidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#TestShape-property>: <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#property>
+     Expected statements: 26
+     Actual statements: 26
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix m: <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource1;
+                sh:resultPath m:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxExclusiveConstraintComponent;
+                sh:sourceShape m:TestShape-property;
+                sh:value 1
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource2;
+                sh:resultPath m:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxExclusiveConstraintComponent;
+                sh:sourceShape m:TestShape-property;
+                sh:value 2
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource3;
+                sh:resultPath m:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxExclusiveConstraintComponent;
+                sh:sourceShape m:TestShape-property;
+                sh:value "a"
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix m: <http://datashapes.org/sh/tests/core/property/maxExclusive-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource1;
+                sh:resultPath m:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxExclusiveConstraintComponent;
+                sh:sourceShape m:TestShape;
+                sh:value 1
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource2;
+                sh:resultPath m:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxExclusiveConstraintComponent;
+                sh:sourceShape m:TestShape;
+                sh:value 2
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource3;
+                sh:resultPath m:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxExclusiveConstraintComponent;
+                sh:sourceShape m:TestShape;
+                sh:value "a"
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxInclusive-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxInclusive-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxInclusive-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxInclusive-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxInclusive-001>
+Target node <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#InvalidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#InvalidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#TestShape-property>: <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#property>
+  -> Error 2 should less than or equal to  1
+Target node <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#InvalidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#InvalidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#TestShape-property>: <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#property>
+  -> Error a should less than or equal to  1
+Target node <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#ValidResource1>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#TestShape-property>: <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#property>
+Target node <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#ValidResource2>
+ Applying shape <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#ValidResource2>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#TestShape-property>: <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#property>
+     Expected statements: 18
+     Actual statements: 18
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix m: <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource1;
+                sh:resultPath m:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent;
+                sh:sourceShape m:TestShape-property;
+                sh:value 2
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource2;
+                sh:resultPath m:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent;
+                sh:sourceShape m:TestShape-property;
+                sh:value "a"
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix m: <http://datashapes.org/sh/tests/core/property/maxInclusive-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource1;
+                sh:resultPath m:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent;
+                sh:sourceShape m:TestShape;
+                sh:value 2
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidResource2;
+                sh:resultPath m:property;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent;
+                sh:sourceShape m:TestShape;
+                sh:value "a"
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxLength-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxLength-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxLength-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxLength-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/maxLength-001>
+     Expected statements: 10
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix m: <http://datashapes.org/sh/tests/core/property/maxLength-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode m:InvalidInstance1;
+                sh:resultPath m:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MaxLengthConstraintComponent;
+                sh:sourceShape m:TestShape-testProperty;
+                sh:value "ABC"
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-001>
+Target class <http://datashapes.org/sh/tests/core/property/minCount-001.test#Person>
+Target class member <http://datashapes.org/sh/tests/core/property/minCount-001.test#InvalidPerson>
+ Applying shape <http://datashapes.org/sh/tests/core/property/minCount-001.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/minCount-001.test#InvalidPerson>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/minCount-001.test#PersonShape-firstName>: <http://datashapes.org/sh/tests/core/property/minCount-001.test#firstName>
+  -> Too few (0) <http://datashapes.org/sh/tests/core/property/minCount-001.test#firstName> on <http://datashapes.org/sh/tests/core/property/minCount-001.test#InvalidPerson>
+Target class member <http://datashapes.org/sh/tests/core/property/minCount-001.test#ValidResource>
+ Applying shape <http://datashapes.org/sh/tests/core/property/minCount-001.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/minCount-001.test#ValidResource>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/minCount-001.test#PersonShape-firstName>: <http://datashapes.org/sh/tests/core/property/minCount-001.test#firstName>
+Target node <http://datashapes.org/sh/tests/core/property/minCount-001.test#ValidResource>
+ Applying shape <http://datashapes.org/sh/tests/core/property/minCount-001.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/minCount-001.test#ValidResource>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/minCount-001.test#PersonShape-firstName>: <http://datashapes.org/sh/tests/core/property/minCount-001.test#firstName>
+     Expected statements: 9
+     Actual statements: 9
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix min: <http://datashapes.org/sh/tests/core/property/minCount-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode min:InvalidPerson;
+                sh:resultPath min:firstName;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+                sh:sourceShape min:PersonShape-firstName
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix min: <http://datashapes.org/sh/tests/core/property/minCount-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode min:InvalidPerson;
+                sh:resultPath min:firstName;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+                sh:sourceShape min:PersonShape
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-002.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-002>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-002.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-002.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minCount-002>
+Target node <http://datashapes.org/sh/tests/core/property/minCount-002.test#ValidResource1>
+ Applying shape <http://datashapes.org/sh/tests/core/property/minCount-002.test#TestShape>
+        to node <http://datashapes.org/sh/tests/core/property/minCount-002.test#ValidResource1>
+  closed: false
+  Checking property _:n415: <http://datashapes.org/sh/tests/core/property/minCount-002.test#property>
+     Expected statements: 2
+     Actual statements: 2
+           Match -> passed
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-002.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-002>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-002.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-002.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-002>
+     Expected statements: 18
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix min: <http://datashapes.org/sh/tests/core/property/minExclusive-002.test#>.
+@prefix rd: <http://www.w3.org/2000/01/rdf-schema#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode min:InvalidInstance1;
+                sh:resultPath min:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinExclusiveConstraintComponent;
+                sh:sourceShape min:TestShape-testProperty;
+                sh:value "A string"
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode min:InvalidInstance2;
+                sh:resultPath min:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinExclusiveConstraintComponent;
+                sh:sourceShape min:TestShape-testProperty;
+                sh:value rd:Resource
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minLength-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minLength-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minLength-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minLength-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minLength-001>
+     Expected statements: 10
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix min: <http://datashapes.org/sh/tests/core/property/minLength-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode min:InvalidInstance1;
+                sh:resultPath min:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinLengthConstraintComponent;
+                sh:sourceShape min:TestShape-testProperty;
+                sh:value "A"
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-001>
+     Expected statements: 10
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix nod: <http://datashapes.org/sh/tests/core/property/node-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode nod:Issue_1;
+                sh:resultPath nod:assignedTo;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:NodeConstraintComponent;
+                sh:sourceShape nod:Issue-assignedTo;
+                sh:value nod:Anon
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/minExclusive-001>
+     Expected statements: 18
+     Actual statements: 2
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix min: <http://datashapes.org/sh/tests/core/property/minExclusive-001.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode min:InvalidInstance1;
+                sh:resultPath min:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinExclusiveConstraintComponent;
+                sh:sourceShape min:TestShape-testProperty;
+                sh:value 40
+            ],
+            [
+                a sh:ValidationResult;
+                sh:focusNode min:InvalidInstance2;
+                sh:resultPath min:testProperty;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:MinExclusiveConstraintComponent;
+                sh:sourceShape min:TestShape-testProperty;
+                sh:value 39
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+[ a sh:ValidationReport; sh:conforms true ].
+
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-002.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-002>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-002.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-002.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/node-002>
+Target class <http://datashapes.org/sh/tests/core/property/node-002.test#Person>
+Target class member <http://datashapes.org/sh/tests/core/property/node-002.test#Bob>
+ Applying shape <http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/node-002.test#Bob>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address>: <http://datashapes.org/sh/tests/core/property/node-002.test#address>
+ Applying shape <http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape>
+        to node <http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape-postalCode>: <http://datashapes.org/sh/tests/core/property/node-002.test#postalCode>
+  -> Error <http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress> should match shape  <http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape>
+Target class member <http://datashapes.org/sh/tests/core/property/node-002.test#Reto>
+ Applying shape <http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape>
+        to node <http://datashapes.org/sh/tests/core/property/node-002.test#Reto>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address>: <http://datashapes.org/sh/tests/core/property/node-002.test#address>
+ Applying shape <http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape>
+        to node <http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress>
+  closed: false
+  Checking property <http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape-postalCode>: <http://datashapes.org/sh/tests/core/property/node-002.test#postalCode>
+  -> Error 5678 should be datatype  <http://www.w3.org/2001/XMLSchema#string>
+     Expected statements: 10
+     Actual statements: 10
+         -> FAILED, expected:
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix nod: <http://datashapes.org/sh/tests/core/property/node-002.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode nod:Reto;
+                sh:resultPath nod:address;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:NodeConstraintComponent;
+                sh:sourceShape nod:PersonShape-address;
+                sh:value nod:RetosAddress
+            ]
+].
+
+__________________________________________________
+@prefix : <#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix nod: <http://datashapes.org/sh/tests/core/property/node-002.test#>.
+
+[
+    a sh:ValidationReport;
+    sh:conforms true;
+    sh:result
+            [
+                a sh:ValidationResult;
+                sh:focusNode nod:Bob;
+                sh:resultPath nod:address;
+                sh:resultSeverity sh:Violation;
+                sh:sourceConstraintComponent sh:NodeConstraintComponent;
+                sh:sourceShape nod:PersonShape;
+                sh:value nod:BobsAddress
+            ]
+].
+
+__________________________________________________
+
+1
+Manifest loaded: <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/nodeKind-001.ttl>
+Entries 1
+  -- Do approp test for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/nodeKind-001>
+loading... <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/nodeKind-001.ttl>
+ includes: 0 for <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/nodeKind-001.ttl>
+     Validation test <file:///devel/github.com/w3c/data-shapes/data-shapes-test-suite/tests/dash/core/property/nodeKind-001>
+Target class <http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass>
+Target class member <http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode>
+ Applying shape <http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode>
+        to node <http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode>
+  closed: false
+@@ NO PATH! 0
+as subject: 0
+as object: 0
+property: _:n463
+shape: <http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode>
+about shape: <http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .,<http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode> <http://www.w3.org/ns/shacl#property> _:n463 .,<http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode> <http://www.w3.org/ns/shacl#targetClass> <http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass> .
+node: <http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode>

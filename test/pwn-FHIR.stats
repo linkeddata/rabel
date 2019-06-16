@@ -1,0 +1,15 @@
+named-resources/observation-example-bloodpressure.ttl - 8226
+from-file/hl7.org/fhir/Observation.ttl - 93
+from-file/hl7.org/fhir/Practitioner.ttl - 86
+from-file/hl7.org/fhir/treeRoot.ttl - 102
+from-file/hl7.org/fhir/Patient/example.ttl - 287
+from-file/hl7.org/fhir/fhir-ttl.ttl - 132
+from-file/hl7.org/fhir/Observation/blood-pressure.ttl.ttl - 201
+from-file/hl7.org/fhir/Observation/blood-pressure.ttl - 10256
+from-file/hl7.org/fhir/Practitioner/example.ttl - 343
+from-file/hl7.org/fhir/Patient.ttl - 74
+from-file/hl7.org/fhir/STU3/Observation/blood-pressure.ttl.ttl - 110
+from-file/obs.ntriples - 14020
+from-http/hl7.org/fhir/Observation.ttl - 98
+from-http/hl7.org/fhir/treeRoot.ttl - 107
+from-http/hl7.org/fhir/Observation/example.ttl - 118

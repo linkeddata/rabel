@@ -1,0 +1,4 @@
+@prefix fhir: <./>.
+@prefix Obs: <Observation/>.
+
+   Obs:blood-pressure a fhir:Observation .

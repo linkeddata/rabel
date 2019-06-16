@@ -1,0 +1,9 @@
+@prefix fhir: <../>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+<>
+    a    owl:Ontology;
+    owl:imports
+       fhir:fhir-ttl;
+    owl:versionIRI
+       <../STU3/Observation/blood-pressure.ttl>.

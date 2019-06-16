@@ -1,0 +1,11 @@
+@prefix fhir: <../>.
+@prefix P: <./>.
+@prefix Obs: <../Observation/>.
+
+   P:example a fhir:Patient .
+Obs:blood-pressure
+    fhir:Observation-subject
+            [ fhir:Reference-reference
+               [ fhir:value "Patient/example" ];
+            fhir:link
+               P:example ].
