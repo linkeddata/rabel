@@ -31,7 +31,7 @@ var helpMessage =
 
 var $rdf = require('rdflib')
 var fs = require('fs')
-var ShapeChecker = require('./../shacl-check/src/shacl-check.js')
+var ShapeChecker = require('shacl-check')
 
 var kb = $rdf.graph()
 var fetcher = $rdf.fetcher(kb)

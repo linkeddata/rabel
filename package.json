@@ -16,12 +16,11 @@
   "bugs": "http://github.com/linkeddata/rabel/issues",
   "dependencies": {
     "rdflib": "^0.15.0",
-    "shacl-check": "^0.0.1",
+    "shacl-check": "^1.0.4",
     "xmldom": "^0.1.22"
   },
   "bin": {
     "rabel": "rabel.js"
   },
-  "devDependencies": {},
   "main": "rabel.js"
 }
