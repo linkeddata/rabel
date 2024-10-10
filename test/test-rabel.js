@@ -75,11 +75,12 @@ describe('rabel', () => {
         try {
           fs.removeSync(TARGET_DIR)
         } catch (e) {
+          console.log('file removed failed for ' + TARGET_DIR)
         }
         fs.mkdirSync(TARGET_DIR)
         process.chdir(TARGET_DIR)
         fetcher.nowOrWhenFetched(doc, {}, function (ok, body, xhr) {
-          // rabel.check(ok, body, xhr ? xhr.status : undefined)
+          rabel.check(ok, body, xhr ? xhr.status : undefined)
           console.log('Loaded  ' + doc)
           rabel.spray(
             'http://a.example/',

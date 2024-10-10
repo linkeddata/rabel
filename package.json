@@ -17,8 +17,10 @@
   "dependencies": {
     "fs-extra": "^4.0.2",
     "node-fetch": "^2.6.0",
-    "rdflib": ">=0.20.1",
+    "rdflib": ">=2.0.0",
     "shacl-check": "^1.0.3",
+    "solid-auth-cli": "^1.0.8",
+    "solid-auth-client": "^2.3.0",
     "xmldom": "^0.1.22"
   },
   "bin": {
@@ -30,6 +32,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "hard-install": "rm -r node_modules; rm package-lock.json; npm install"
   }
 }

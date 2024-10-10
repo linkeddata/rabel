@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+//!/usr/local/bin/node
 // Utility Data conversion program.
 //
 // Test platform for parsers and serializers
@@ -131,8 +131,10 @@ var doAppropriateTest = function (test, kb) {
 
 // See https://www.w3.org/TR/rdf11-testcases/
 // Returns a promise of set of issues
-var runTests = function (doc) {
-  var kb = $rdf.graph()
+function runTests (doc) {
+  const kb = $rdf.graph()
+  const fetcher = $rdf.fetcher(kb)
+
   // var fetcher = $rdf.fetcher(kb, {a: 1})
   const indent = ''
   console.log('runTests ' + doc)
@@ -501,6 +503,7 @@ var readXML = function (targetDocument, options, callbackFunction, kb) {
 // ends
 
 module.exports = {
+  runTests,
   check: check,
   spray: spray,
   readXML: readXML
