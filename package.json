@@ -22,5 +22,12 @@
   "bin": {
     "rabel": "rabel.js"
   },
-  "main": "rabel.js"
+  "main": "rabel.js",
+  "scripts": {
+    "test": "node test/index.js",
+    "test:xml": "node test/index.js --xml-only",
+    "test:html": "node test/index.js --html-only",
+    "test:shapes": "node test/index.js --shapes-only",
+    "test:verbose": "node test/index.js --verbose"
+  }
 }
