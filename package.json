@@ -15,9 +15,9 @@
   "homepage": "http://github.com/linkeddata/rabel",
   "bugs": "http://github.com/linkeddata/rabel/issues",
   "dependencies": {
-    "rdflib": "^0.15.0",
+    "rdflib": "^2.2.37",
     "shacl-check": "^1.0.4",
-    "xmldom": "^0.1.22"
+    "xmldom": "^0.6.0"
   },
   "bin": {
     "rabel": "rabel.js"
