@@ -15,12 +15,38 @@
   "homepage": "http://github.com/linkeddata/rabel",
   "bugs": "http://github.com/linkeddata/rabel/issues",
   "dependencies": {
-    "rdflib": "^0.15.0",
+    "rdflib": "^2.2.37",
     "shacl-check": "^1.0.4",
-    "xmldom": "^0.1.22"
+    "xmldom": "^0.6.0"
   },
   "bin": {
     "rabel": "rabel.js"
   },
-  "main": "rabel.js"
+  "main": "rabel.js",
+  "scripts": {
+    "test": "node test/index.js",
+    "test:xml": "node test/index.js --xml-only",
+    "test:html": "node test/index.js --html-only",
+    "test:shapes": "node test/index.js --shapes-only",
+    "test:verbose": "node test/index.js --verbose",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "semantic-release": "^24.2.3"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "next",
+      {
+        "name": "alpha",
+        "prerelease": true
+      },
+      {
+        "name": "beta",
+        "prerelease": true
+      }
+    ]
+  }
 }
