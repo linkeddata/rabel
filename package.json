@@ -32,7 +32,10 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "semantic-release": "^24.2.3"
+    "finalhandler": "^2.1.0",
+    "portfinder": "^1.0.35",
+    "semantic-release": "^24.2.3",
+    "serve-static": "^1.16.2"
   },
   "release": {
     "branches": [
