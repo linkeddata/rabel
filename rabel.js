@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/env node
 // Utility Data conversion program.
 //
 // Test platform for parsers and serializers
