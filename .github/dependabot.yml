@@ -8,7 +8,7 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: "weekly"
     labels:
       - "dependencies"
     groups:
@@ -16,8 +16,6 @@ updates:
         update-types:
         - "minor"
         - "patch"
-        exclude-patterns:
-        - "swipl-wasm"
   - package-ecosystem: "github-actions"
     directory: "/" # Location of package manifests
     schedule:
